@@ -1,0 +1,14 @@
+/* Sidebar/top-left brand logo */
+.brand-link .brand-image {
+  width: 80px !important;
+  height: auto !important;
+  max-height: none !important; /* AdminLTE caps this otherwise */
+  object-fit: contain;
+}
+
+/* Login page logo (if you use login_logo) */
+.login-page .login-logo img {
+  width: 80px !important;
+  height: auto !important;
+  max-height: none !important;
+}

@@ -21,10 +21,10 @@
   --ed-fs-h5: 16px;
   --ed-fs-h6: 14px;
   --ed-color-common-white: #ffffff;
-  --ed-color-common-black: #000000;
-  --ed-color-heading-primary: #162726;
-  --ed-color-text-body: #6C706F;
-  --ed-color-theme-primary: #07A698;
+  --ed-color-common-black: #316ed1;
+  --ed-color-heading-primary: #181627;
+  --ed-color-text-body: #316ed1;
+  --ed-color-theme-primary: #316ed1;
   --ed-color-grey-1: #F2F4F7;
   --ed-color-bg-1: #0E121D;
   --ed-color-bg-2: #191A1F;
@@ -444,7 +444,7 @@ ul {
   width: 142px;
   height: 142px;
   border-radius: 50%;
-  background: radial-gradient(farthest-side, #07a698 94%, rgba(0, 0, 0, 0)) top/15.5px 15.5px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, #07a698);
+  background: radial-gradient(farthest-side, #316ed1 94%, rgba(0, 0, 0, 0)) top/15.5px 15.5px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, #316ed1);
   -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 15.5px), #000 0);
   animation: spinner-c7wet2 1.2s infinite linear;
 }

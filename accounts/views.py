@@ -116,7 +116,7 @@ def login_view(request):
             messages.error(request, "رقم الهاتف غير مسجل.")
             return render(request, "login.html")
 
-        user = authenticate(request, username=user.username, password=password)
+        user = authenticate(request, student_mobile=phone_number, password=password)
 
         if user is not None:
             login(request, user)

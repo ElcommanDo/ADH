@@ -47,11 +47,11 @@ class CustomUser(AbstractUser):
     age = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     city = models.CharField(max_length=50, blank=True, null=True)
-
-    USERNAME_FIELD = "student_mobile"   # login بالـ student_mobile
+    image = models.ImageField(upload_to='images', null=True, blank=True)
+    job_title = models.CharField(max_length=150, null=True, blank=True)
+    USERNAME_FIELD = "student_mobile" 
     REQUIRED_FIELDS = ["first_name", "last_name"]
 
-    objects = CustomUserManager()   # نربط اليوزر مانجر
-
+    objects = CustomUserManager()   
     def __str__(self):
         return f"{self.student_mobile} - {self.role}"
