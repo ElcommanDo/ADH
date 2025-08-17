@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADH ACADEMY - Remote Learning & Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll due to potential overflow */
+        }
+        /* Custom light blue color */
+        .bg-light-blue {
+            background-color: #3597b7; /* Your specific light blue */
+        }
+        .text-light-blue {
+            color: #68ccee; /* Your specific light blue text color */
+        }
+        .border-light-blue {
+            border-color: #ADD8E6;
+        }
+        .hover\:bg-light-blue:hover {
+            background-color: #ADD8E6;
+        }
+        .hover\:text-light-blue:hover {
+            color: #ADD8E6;
+        }
+
+        /* Dark Mode Styles */
+        html.dark {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity)); /* bg-gray-900 */
+            color: rgb(229 231 235 / var(--tw-text-opacity)); /* text-gray-200 */
+        }
+
+        html.dark .bg-gray-50 {
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+        }
+
+        html.dark .bg-white {
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity)); /* bg-gray-800 */
+            color: rgb(229 231 235 / var(--tw-text-opacity));
+        }
+
+        html.dark .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+        }
+
+        html.dark .text-gray-900 {
+            color: rgb(229 231 235 / var(--tw-text-opacity));
+        }
+
+        html.dark .text-gray-700 {
+            color: rgb(209 213 219 / var(--tw-text-opacity)); /* text-gray-300 */
+        }
+
+        html.dark .text-gray-600 {
+            color: rgb(156 163 175 / var(--tw-text-opacity)); /* text-gray-400 */
+        }
+
+        html.dark .text-gray-500 {
+            color: rgb(107 114 128 / var(--tw-text-opacity)); /* text-gray-500 - stays similar */
+        }
+
+        html.dark .border-gray-200 {
+            border-color: rgb(75 85 99 / var(--tw-border-opacity)); /* border-gray-700 */
+        }
+
+        html.dark .border-gray-100 {
+            border-color: rgb(55 65 81 / var(--tw-border-opacity)); /* border-gray-800 */
+        }
+
+        html.dark .bg-gray-100 {
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity)); /* bg-gray-900 */
+        }
+
+        /* Preloader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Changed to white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            color: black; /* Changed text color for white background */
+        }
+        #preloader video {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 1rem; /* Rounded corners for video */
+        }
+        #preloader p {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+        .hidden-preloader {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300 ease-in-out">
+
+    <div id="preloader" class="flex flex-col items-center justify-center">
+        <video id="preloader-video" autoplay muted playsinline class="rounded-xl shadow-lg">
+            <source src="D:\Work\ADH\9.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="text-xl font-medium mt-4">Loading ADH ACADEMY...</p>
+    </div>
+
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50 transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4 flex justify-between items-center flex-wrap">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="D:\Work\ADH\1.00_00_56_06.Still003.png" width="100" alt="ADH Academy Logo" class="rounded-full">
+                <span class="text-2xl font-bold text-gray-900">ADH ACADEMY</span>
+            </a>
+
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#home" style="padding-left: 20px;" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="home">Home</a>
+                <a href="#articles" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="articles">Articles</a>
+                <a href="#courses" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="courses">Courses</a>
+                <a href="#about-us" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="aboutUs">About Us</a>
+                <a href="#services" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="services">Services</a>
+                <a href="#contact-us" class="text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="contactUs">Contact Us</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <button id="lang-en" class="text-gray-700 hover:text-light-blue transition duration-300 ease-in-out flex items-center space-x-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English Flag" class="w-6 h-4 rounded-sm shadow-sm">
+                        <span>EN</span>
+                    </button>
+                    <button id="lang-ar" class="text-gray-700 hover:text-light-blue transition duration-300 ease-in-out flex items-center space-x-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="Arabic Flag" class="w-6 h-4 rounded-sm shadow-sm">
+                        <span>AR</span>
+                    </button>
+                </div>
+                <button id="theme-toggle" class="text-gray-700 hover:text-light-blue focus:outline-none">
+                    <i class="fas fa-moon text-xl" id="theme-icon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-light-blue focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav id="mobile-menu" class="md:hidden bg-white px-4 pt-2 pb-4 border-t border-gray-200 hidden transition-colors duration-300 ease-in-out">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out border-b border-gray-100" data-key="home">Home</a>
+            <a href="#articles" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out border-b border-gray-100" data-key="articles">Articles</a>
+            <a href="#courses" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out border-b border-gray-100" data-key="courses">Courses</a>
+            <a href="#about-us" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out border-b border-gray-100" data-key="aboutUs">About Us</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out border-b border-gray-100" data-key="services">Services</a>
+            <a href="#contact-us" class="block py-2 text-gray-700 hover:text-light-blue font-medium transition duration-300 ease-in-out" data-key="contactUs">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="bg-light-blue text-white py-20 md:py-32 flex items-center justify-center min-h-[60vh] rounded-b-xl shadow-lg">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight" data-key="heroTitle">Empowering Your Future Through Remote Learning</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto" data-key="heroSubtitle">ADH ACADEMY offers a diverse range of courses and resources, designed to help you achieve your academic and professional goals from anywhere in the world.</p>
+                <a href="#courses" class="inline-block bg-white text-light-blue px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 ease-in-out shadow-lg" data-key="exploreCoursesBtn">Explore Courses</a>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 bg-gray-100 transition-colors duration-300 ease-in-out">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900" data-key="servicesTitle">Our Services</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer service-item" onclick="handleItemClick('Service: Online Courses')" data-key="service1">
+                        <div class="text-light-blue text-4xl mb-4 text-center"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="service1Title">Online Courses</h3>
+                        <p class="text-gray-600 text-sm" data-key="service1Desc">Access a wide variety of subjects taught by industry experts, available 24/7.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer service-item" onclick="handleItemClick('Service: Live Webinars')" data-key="service2">
+                        <div class="text-light-blue text-4xl mb-4 text-center"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="service2Title">Live Webinars</h3>
+                        <p class="text-gray-600 text-sm" data-key="service2Desc">Participate in interactive live sessions and Q&A with instructors.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer service-item" onclick="handleItemClick('Service: Career Counseling')" data-key="service3">
+                        <div class="text-light-blue text-4xl mb-4 text-center"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="service3Title">Career Counseling</h3>
+                        <p class="text-gray-600 text-sm" data-key="service3Desc">Get personalized guidance to shape your professional path.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer service-item" onclick="handleItemClick('Service: Certification Programs')" data-key="service4">
+                        <div class="text-light-blue text-4xl mb-4 text-center"><i class="fas fa-certificate"></i></div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="service4Title">Certification Programs</h3>
+                        <p class="text-gray-600 text-sm" data-key="service4Desc">Earn recognized certifications to boost your resume.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <button class="bg-light-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 ease-in-out shadow-lg" onclick="handleSeeMore('Services')" data-key="seeMoreServicesBtn">See More Services</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="py-16 bg-white transition-colors duration-300 ease-in-out">
+            <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://placehold.co/600x400/ADD8E6/000000?text=About+Us+Image" alt="About Us" class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900" data-key="aboutUsTitle">About ADH ACADEMY</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4" data-key="aboutUsPara1">
+                        ADH ACADEMY is dedicated to providing high-quality, accessible education to learners worldwide. Our mission is to break down geographical barriers and offer flexible learning opportunities that cater to diverse needs and schedules.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6" data-key="aboutUsPara2">
+                        We believe in fostering a dynamic and engaging learning environment, supported by experienced instructors and cutting-edge educational technology. Join our community and embark on a journey of continuous growth and development.
+                    </p>
+                    <button class="bg-light-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 ease-in-out shadow-lg" onclick="handleSeeMore('About Us')" data-key="learnMoreBtn">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="py-16 bg-gray-100 transition-colors duration-300 ease-in-out">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900" data-key="coursesTitle">Our Popular Courses</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer course-item" onclick="handleItemClick('Course: Web Development Basics')" data-key="course1">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Web+Dev" alt="Web Development Course" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="course1Title">Web Development Basics</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="course1Desc">Learn HTML, CSS, and JavaScript to build your first websites.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span data-key="courseStudents"><i class="fas fa-users mr-1"></i> 1200 Students</span>
+                                <span data-key="courseRatings"><i class="fas fa-star text-yellow-400 mr-1"></i> 4.8 Ratings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer course-item" onclick="handleItemClick('Course: Data Science with Python')" data-key="course2">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Data+Sci" alt="Data Science Course" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="course2Title">Data Science with Python</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="course2Desc">Master data analysis, visualization, and machine learning.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span data-key="courseStudents"><i class="fas fa-users mr-1"></i> 950 Students</span>
+                                <span data-key="courseRatings"><i class="fas fa-star text-yellow-400 mr-1"></i> 4.9 Ratings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer course-item" onclick="handleItemClick('Course: Digital Marketing Strategy')" data-key="course3">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Digital+Mkt" alt="Digital Marketing Course" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="course3Title">Digital Marketing Strategy</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="course3Desc">Develop effective online marketing campaigns and strategies.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span data-key="courseStudents"><i class="fas fa-users mr-1"></i> 700 Students</span>
+                                <span data-key="courseRatings"><i class="fas fa-star text-yellow-400 mr-1"></i> 4.7 Ratings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer course-item" onclick="handleItemClick('Course: Graphic Design Fundamentals')" data-key="course4">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Graphic+Design" alt="Graphic Design Course" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="course4Title">Graphic Design Fundamentals</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="course4Desc">Learn design principles and software like Adobe Photoshop.</p>
+                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                <span data-key="courseStudents"><i class="fas fa-users mr-1"></i> 850 Students</span>
+                                <span data-key="courseRatings"><i class="fas fa-star text-yellow-400 mr-1"></i> 4.6 Ratings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <button class="bg-light-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 ease-in-out shadow-lg" onclick="handleSeeMore('Courses')" data-key="viewAllCoursesBtn">View All Courses</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="py-16 bg-white transition-colors duration-300 ease-in-out">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900" data-key="articlesTitle">Latest Articles & Insights</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer article-item" onclick="handleItemClick('Article: Future of Remote Work')" data-key="article1">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Remote+Work" alt="Remote Work Article" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="article1Title">The Future of Remote Work</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="article1Desc">Exploring trends and predictions for the evolving workspace.</p>
+                            <span class="text-sm text-gray-500" data-key="articleDate"><i class="fas fa-calendar-alt mr-1"></i> July 20, 2025</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer article-item" onclick="handleItemClick('Article: AI in Education')" data-key="article2">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=AI+Edu" alt="AI in Education Article" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="article2Title">AI's Impact on Modern Education</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="article2Desc">How artificial intelligence is transforming learning experiences.</p>
+                            <span class="text-sm text-gray-500" data-key="articleDate"><i class="fas fa-calendar-alt mr-1"></i> July 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer article-item" onclick="handleItemClick('Article: Upskilling for 2026')" data-key="article3">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Upskill" alt="Upskilling Article" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="article3Title">Upskilling for the Job Market of 2026</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="article3Desc">Essential skills to acquire for future career success.</p>
+                            <span class="text-sm text-gray-500" data-key="articleDate"><i class="fas fa-calendar-alt mr-1"></i> July 10, 2025</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out cursor-pointer article-item" onclick="handleItemClick('Article: Benefits of Online Learning')" data-key="article4">
+                        <img src="https://placehold.co/600x400/ADD8E6/000000?text=Online+Learn" alt="Online Learning Article" class="rounded-t-xl w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-900" data-key="article4Title">Benefits of Flexible Online Learning</h3>
+                            <p class="text-gray-600 text-sm mb-4" data-key="article4Desc">Discover the advantages of pursuing education remotely.</p>
+                            <span class="text-sm text-gray-500" data-key="articleDate"><i class="fas fa-calendar-alt mr-1"></i> July 05, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <button class="bg-light-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 ease-in-out shadow-lg" onclick="handleSeeMore('Articles')" data-key="readMoreArticlesBtn">Read More Articles</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us" class="py-16 bg-gray-100 transition-colors duration-300 ease-in-out">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900" data-key="contactUsTitle">Contact Us</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg transition-colors duration-300 ease-in-out">
+                    <p class="text-gray-700 text-center mb-8" data-key="contactUsIntro">
+                        Have questions or need assistance? Reach out to us using the form below or through our contact details.
+                    </p>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2" data-key="formNameLabel">Name</label>
+                            <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-light-blue focus:border-transparent transition duration-200 ease-in-out" placeholder="Your Name" required data-key="formNamePlaceholder">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2" data-key="formEmailLabel">Email</label>
+                            <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-light-blue focus:border-transparent transition duration-200 ease-in-out" placeholder="your.email@example.com" required data-key="formEmailPlaceholder">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2" data-key="formMessageLabel">Message</label>
+                            <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-light-blue focus:border-transparent transition duration-200 ease-in-out" placeholder="Your message..." required data-key="formMessagePlaceholder"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-light-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 ease-in-out shadow-lg" data-key="sendMessageBtn">Send Message</button>
+                        </div>
+                    </form>
+                    <div class="mt-10 text-center text-gray-700">
+                        <p class="mb-2" data-key="address"><i class="fas fa-map-marker-alt mr-2 text-light-blue"></i> 123 Academy Road, Education City, Global</p>
+                        <p class="mb-2" data-key="phone"><i class="fas fa-phone mr-2 text-light-blue"></i> +1 (555) 123-4567</p>
+                        <p data-key="emailContact"><i class="fas fa-envelope mr-2 text-light-blue"></i> info@adhacademy.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-xl shadow-inner transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
+                <a href="#home" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="home">Home</a>
+                <a href="#articles" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="articles">Articles</a>
+                <a href="#courses" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="courses">Courses</a>
+                <a href="#about-us" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="aboutUs">About Us</a>
+                <a href="#services" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="services">Services</a>
+                <a href="#contact-us" class="hover:text-light-blue transition duration-300 ease-in-out" data-key="contactUs">Contact Us</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-light-blue text-2xl transition duration-300 ease-in-out"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-light-blue text-2xl transition duration-300 ease-in-out"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-light-blue text-2xl transition duration-300 ease-in-out"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-gray-400 hover:text-light-blue text-2xl transition duration-300 ease-in-out"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm" data-key="copyright">&copy; 2025 ADH ACADEMY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                home: 'Home',
+                articles: 'Articles',
+                courses: 'Courses',
+                aboutUs: 'About Us',
+                services: 'Services',
+                contactUs: 'Contact Us',
+                heroTitle: 'Empowering Your Future Through Remote Learning',
+                heroSubtitle: 'ADH ACADEMY offers a diverse range of courses and resources, designed to help you achieve your academic and professional goals from anywhere in the world.',
+                exploreCoursesBtn: 'Explore Courses',
+                servicesTitle: 'Our Services',
+                service1Title: 'Online Courses',
+                service1Desc: 'Access a wide variety of subjects taught by industry experts, available 24/7.',
+                service2Title: 'Live Webinars',
+                service2Desc: 'Participate in interactive live sessions and Q&A with instructors.',
+                service3Title: 'Career Counseling',
+                service3Desc: 'Get personalized guidance to shape your professional path.',
+                service4Title: 'Certification Programs',
+                service4Desc: 'Earn recognized certifications to boost your resume.',
+                seeMoreServicesBtn: 'See More Services',
+                aboutUsTitle: 'About ADH ACADEMY',
+                aboutUsPara1: 'ADH ACADEMY is dedicated to providing high-quality, accessible education to learners worldwide. Our mission is to break down geographical barriers and offer flexible learning opportunities that cater to diverse needs and schedules.',
+                aboutUsPara2: 'We believe in fostering a dynamic and engaging learning environment, supported by experienced instructors and cutting-edge educational technology. Join our community and embark on a journey of continuous growth and development.',
+                learnMoreBtn: 'Learn More',
+                coursesTitle: 'Our Popular Courses',
+                course1Title: 'Web Development Basics',
+                course1Desc: 'Learn HTML, CSS, and JavaScript to build your first websites.',
+                course2Title: 'Data Science with Python',
+                course2Desc: 'Master data analysis, visualization, and machine learning.',
+                course3Title: 'Digital Marketing Strategy',
+                course3Desc: 'Develop effective online marketing campaigns and strategies.',
+                course4Title: 'Graphic Design Fundamentals',
+                course4Desc: 'Learn design principles and software like Adobe Photoshop.',
+                courseStudents: (count) => `${count} Students`, // Use a function for dynamic text
+                courseRatings: (rating) => `${rating} Ratings`, // Use a function for dynamic text
+                viewAllCoursesBtn: 'View All Courses',
+                articlesTitle: 'Latest Articles & Insights',
+                article1Title: 'The Future of Remote Work',
+                article1Desc: 'Exploring trends and predictions for the evolving workspace.',
+                article2Title: 'AI\'s Impact on Modern Education',
+                article2Desc: 'How artificial intelligence is transforming learning experiences.',
+                article3Title: 'Upskilling for the Job Market of 2026',
+                article3Desc: 'Essential skills to acquire for future career success.',
+                article4Title: 'Benefits of Flexible Online Learning',
+                article4Desc: 'Discover the advantages of pursuing education remotely.',
+                articleDate: (date) => `${date}`, // For dates, just return the date string
+                readMoreArticlesBtn: 'Read More Articles',
+                contactUsTitle: 'Contact Us',
+                contactUsIntro: 'Have questions or need assistance? Reach out to us using the form below or through our contact details.',
+                formNameLabel: 'Name',
+                formNamePlaceholder: 'Your Name',
+                formEmailLabel: 'Email',
+                formEmailPlaceholder: 'your.email@example.com',
+                formMessageLabel: 'Message',
+                formMessagePlaceholder: 'Your message...',
+                sendMessageBtn: 'Send Message',
+                address: '123 Academy Road, Education City, Global',
+                phone: '+1 (555) 123-4567',
+                emailContact: 'info@adhacademy.com',
+                copyright: '&copy; 2025 ADH ACADEMY. All rights reserved.',
+            },
+            ar: {
+                home: 'الرئيسية', // Corrected spelling
+                articles: 'المقالات',
+                courses: 'الدورات',
+                aboutUs: 'من نحن',
+                services: 'خدماتنا',
+                contactUs: 'اتصل بنا',
+                heroTitle: 'تمكين مستقبلك من خلال التعلم عن بعد',
+                heroSubtitle: 'تقدم أكاديمية ADH مجموعة متنوعة من الدورات والموارد، المصممة لمساعدتك على تحقيق أهدافك الأكاديمية والمهنية من أي مكان في العالم.',
+                exploreCoursesBtn: 'استكشاف الدورات',
+                servicesTitle: 'خدماتنا',
+                service1Title: 'دورات عبر الإنترنت',
+                service1Desc: 'الوصول إلى مجموعة واسعة من المواضيع التي يدرسها خبراء الصناعة، متاحة 24/7.',
+                service2Title: 'ندوات مباشرة عبر الإنترنت',
+                service2Desc: 'شارك في جلسات تفاعلية مباشرة وأسئلة وأجوبة مع المدربين.',
+                service3Title: 'الإرشاد المهني',
+                service3Desc: 'احصل على إرشادات شخصية لتشكيل مسارك المهني.',
+                service4Title: 'برامج الشهادات',
+                service4Desc: 'احصل على شهادات معترف بها لتعزيز سيرتك الذاتية.',
+                seeMoreServicesBtn: 'مشاهدة المزيد من الخدمات',
+                aboutUsTitle: 'عن أكاديمية ADH',
+                aboutUsPara1: 'تلتزم أكاديمية ADH بتقديم تعليم عالي الجودة ومتاح للمتعلمين في جميع أنحاء العالم. مهمتنا هي كسر الحواجز الجغرافية وتقديم فرص تعليمية مرنة تلبي الاحتياجات والجداول الزمنية المتنوعة.',
+                aboutUsPara2: 'نحن نؤمن بتعزيز بيئة تعليمية ديناميكية وجذابة، بدعم من مدربين ذوي خبرة وتقنيات تعليمية متطورة. انضم إلى مجتمعنا وابدأ رحلة من النمو والتطوير المستمر.',
+                learnMoreBtn: 'تعلم المزيد',
+                coursesTitle: 'دوراتنا الشائعة',
+                course1Title: 'أساسيات تطوير الويب',
+                course1Desc: 'تعلم HTML و CSS و JavaScript لبناء مواقع الويب الأولى الخاصة بك.',
+                course2Title: 'علم البيانات باستخدام بايثون',
+                course2Desc: 'إتقان تحليل البيانات وتصورها والتعلم الآلي.',
+                course3Title: 'استراتيجية التسويق الرقمي',
+                course3Desc: 'تطوير حملات واستراتيجيات تسويق رقمي فعالة عبر الإنترنت.',
+                course4Title: 'أساسيات التصميم الجرافيكي',
+                course4Desc: 'تعلم مبادئ التصميم والبرامج مثل Adobe Photoshop.',
+                courseStudents: (count) => `${count} طالب`,
+                courseRatings: (rating) => `${rating} تقييمات`,
+                viewAllCoursesBtn: 'عرض جميع الدورات',
+                articlesTitle: 'أحدث المقالات والرؤى',
+                article1Title: 'مستقبل العمل عن بعد',
+                article1Desc: 'استكشاف الاتجاهات والتنبؤات لمساحة العمل المتطورة.',
+                article2Title: 'تأثير الذكاء الاصطناعي على التعليم الحديث',
+                article2Desc: 'كيف يحول الذكاء الاصطناعي تجارب التعلم.',
+                article3Title: 'تطوير المهارات لسوق العمل 2026',
+                article3Desc: 'المهارات الأساسية التي يجب اكتسابها لتحقيق النجاح الوظيفي المستقبلي.',
+                article4Title: 'فوائد التعلم المرن عبر الإنترنت',
+                article4Desc: 'اكتشف مزايا متابعة التعليم عن بعد.',
+                articleDate: (date) => `${date}`,
+                readMoreArticlesBtn: 'قراءة المزيد من المقالات',
+                contactUsTitle: 'اتصل بنا',
+                contactUsIntro: 'هل لديك أسئلة أو تحتاج إلى مساعدة؟ تواصل معنا باستخدام النموذج أدناه أو من خلال تفاصيل الاتصال الخاصة بنا.',
+                formNameLabel: 'الاسم',
+                formNamePlaceholder: 'اسمك',
+                formEmailLabel: 'البريد الإلكتروني',
+                formEmailPlaceholder: 'your.email@example.com',
+                formMessageLabel: 'الرسالة',
+                formMessagePlaceholder: 'رسالتك...',
+                sendMessageBtn: 'إرسال الرسالة',
+                address: '123 طريق الأكاديمية، مدينة التعليم، عالمي',
+                phone: '+1 (555) 123-4567',
+                emailContact: 'info@adhacademy.com',
+                copyright: '&copy; 2025 أكاديمية ADH. جميع الحقوق محفوظة.',
+            }
+        };
+
+        let currentLang = 'en'; // Default language
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            const preloaderVideo = document.getElementById('preloader-video');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const langEnButton = document.getElementById('lang-en');
+            const langArButton = document.getElementById('lang-ar');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            // Preloader logic
+            const hidePreloader = () => {
+                preloader.classList.add('hidden-preloader');
+                preloader.addEventListener('transitionend', () => preloader.remove());
+            };
+
+            preloaderVideo.addEventListener('ended', hidePreloader);
+
+            // Fallback for preloader in case video doesn't play or loads too fast
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (!preloader.classList.contains('hidden-preloader')) {
+                        hidePreloader();
+                    }
+                }, 3000); // Hide after 3 seconds if not already hidden
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Function to apply translations
+            const applyTranslation = (lang) => {
+                currentLang = lang;
+                document.querySelectorAll('[data-key]').forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    const translation = translations[lang][key];
+
+                    if (translation) {
+                        if (typeof translation === 'function') {
+                            // Handle dynamic content like "1200 Students"
+                            if (key === 'courseStudents') {
+                                // For dynamic content like "1200 Students", we need to preserve the number.
+                                // We'll look for the number within the existing textContent.
+                                const match = element.textContent.match(/\d+/);
+                                const count = match ? match[0] : 'N/A'; // Extract the number
+                                element.innerHTML = `<i class="fas fa-users mr-1"></i> ${translation(count)}`;
+                            } else if (key === 'courseRatings') {
+                                const match = element.textContent.match(/\d+\.\d+/);
+                                const rating = match ? match[0] : 'N/A';
+                                element.innerHTML = `<i class="fas fa-star text-yellow-400 mr-1"></i> ${translation(rating)}`;
+                            } else if (key === 'articleDate') {
+                                // Extract original date if needed, otherwise just set it
+                                const originalDate = element.textContent.replace('📅 ', '');
+                                element.innerHTML = `<i class="fas fa-calendar-alt mr-1"></i> ${translation(originalDate)}`;
+                            }
+                        } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                            element.placeholder = translation;
+                        } else if (element.tagName === 'TEXTAREA' && element.hasAttribute('placeholder')) {
+                            element.placeholder = translation;
+                        } else {
+                            // This is the primary change for the navigation links
+                            element.textContent = translation;
+                        }
+                    }
+                });
+
+                // Adjust text direction for Arabic
+                if (lang === 'ar') {
+                    document.body.style.direction = 'rtl';
+                    document.body.style.textAlign = 'right';
+                    // Re-apply `md:flex-row-reverse` to the header's container if it was removed
+                    // Or add specific RTL classes to navigation for correct alignment if needed
+                    document.querySelector('header .container').classList.add('md:flex-row-reverse');
+                    document.querySelector('footer .container > div:first-child').classList.add('md:flex-row-reverse');
+                } else {
+                    document.body.style.direction = 'ltr';
+                    document.body.style.textAlign = 'left';
+                    document.querySelector('header .container').classList.remove('md:flex-row-reverse');
+                    document.querySelector('footer .container > div:first-child').classList.remove('md:flex-row-reverse');
+                }
+            };
+
+            // Language switch functionality
+            langEnButton.addEventListener('click', () => {
+                applyTranslation('en');
+                // Store preference
+                localStorage.setItem('lang', 'en');
+            });
+
+            langArButton.addEventListener('click', () => {
+                applyTranslation('ar');
+                // Store preference
+                localStorage.setItem('lang', 'ar');
+            });
+
+            // Load saved language preference or default to English
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyTranslation(savedLang);
+
+            // Dark Mode / Light Mode Toggle
+            const toggleTheme = () => {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    htmlElement.classList.add('light');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                }
+            };
+
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // Apply saved theme on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                htmlElement.classList.remove('light', 'dark'); // Remove existing
+                htmlElement.classList.add(savedTheme);
+                if (savedTheme === 'dark') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            } else {
+                // Default to light if no preference
+                htmlElement.classList.add('light');
+                themeIcon.classList.add('fa-moon');
+            }
+
+
+            // Dummy function for clickable items
+            window.handleItemClick = (itemName) => {
+                console.log(`Clicked on: ${itemName}`);
+                // alert(`You clicked on "${itemName}"!`); // For demonstration
+            };
+
+            // Dummy function for "See More" buttons
+            window.handleSeeMore = (sectionName) => {
+                console.log(`See More button clicked for: ${sectionName}`);
+                // alert(`Navigating to the full list of ${sectionName}!`); // For demonstration
+            };
+        });
+    </script>
+</body>
+</html>

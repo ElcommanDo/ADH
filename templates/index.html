@@ -1,0 +1,1159 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>أكاديمية ADH</title>
+    <link rel="stylesheet" id="contact-form-7-css" href="{%static 'wp-content/plugins/contact-form-7/includes/css/styles_ver%3D6.1.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-core-style-css" href="{%static 'wp-content/plugins/edcare-core/assets/css/edcare-plugin-core_ver%3D1.0.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="tutor-icon-css" href="{%static 'wp-content/plugins/tutor/assets/css/tutor-icon.min_ver%3D3.7.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="tutor-css" href="{%static 'wp-content/plugins/tutor/assets/css/tutor.min_ver%3D3.7.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="tutor-frontend-css" href="{%static 'wp-content/plugins/tutor/assets/css/tutor-front.min_ver%3D3.7.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="woocommerce-inline-inline-css" href="#" type="text/css" media="all">
+    <link rel="stylesheet" id="perfect-scrollbar-css" href="{%static 'wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/css/perfect-scrollbar.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="perfect-scrollbar-wpc-css" href="{%static 'wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/css/custom-theme_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="woosw-icons-css" href="{%static 'wp-content/plugins/woo-smart-wishlist/assets/css/icons_ver%3D5.0.1.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="woosw-frontend-css" href="{%static 'wp-content/plugins/woo-smart-wishlist/assets/css/frontend_ver%3D5.0.1.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="brands-styles-css" href="{%static 'wp-content/plugins/woocommerce/assets/css/brands_ver%3D10.0.4.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="etn-icon-css" href="{%static 'wp-content/plugins/wp-event-solution/assets/css/etn-icon_ver%3D4.0.34.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="etn-public-css-css" href="{%static 'wp-content/plugins/wp-event-solution/build/css/event-manager-public-styles_ver%3D4.0.34.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-breadcrumb-typo-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-custom_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-breadcrumb-bg-settings-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-custom_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-footer-bg-settings-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-custom_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-custom-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-custom_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-fonts-css" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap&ver=1754583894" type="text/css" media="all">
+    <link rel="stylesheet" id="bootstrap-css" href="{%static 'wp-content/themes/edcare/assets/css/bootstrap.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="animate-css" href="{%static 'wp-content/themes/edcare/assets/css/animate.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="daterangepicker-css" href="{%static 'wp-content/themes/edcare/assets/css/daterangepicker.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="fontawesome-css" href="{%static 'wp-content/themes/edcare/assets/css/fontawesome.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="keyframe-animation-css" href="{%static 'wp-content/themes/edcare/assets/css/keyframe-animation_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="nice-select-css" href="{%static 'wp-content/themes/edcare/assets/css/nice-select_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="carouselTicker-css" href="{%static 'wp-content/themes/edcare/assets/css/carouselTicker_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="odometer-css" href="{%static 'wp-content/themes/edcare/assets/css/odometer.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="swiper-css" href="{%static 'wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min_ver%3D8.4.5.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="venobox-css" href="{%static 'wp-content/themes/edcare/assets/css/venobox.min_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-unit-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-unit_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-core-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-core_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-update-css" href="{%static 'wp-content/themes/edcare/assets/css/edcare-update_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="edcare-style-css" href="{%static 'wp-content/themes/edcare/style_ver%3D6.8.2.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-frontend-css" href="{%static 'wp-content/uploads/elementor/css/custom-frontend.min_ver%3D1753978226.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="tpcore-el-template-front-css" href="{%static 'wp-content/plugins/edcare-core/include/elementor/templates/css/template-frontend.min_ver%3D1.0.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-css" href="{%static 'wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min_ver%3D5.43.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-7-css" href="{%static 'wp-content/uploads/elementor/css/post-7_ver%3D1753978227.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-65-css" href="{%static 'wp-content/uploads/elementor/css/post-65_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-roboto-css" href="{%static 'wp-content/uploads/elementor/google-fonts/css/roboto_ver%3D1742969368.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-robotoslab-css" href="{%static 'wp-content/uploads/elementor/google-fonts/css/robotoslab_ver%3D1742969259.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-shared-0-css" href="{%static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min_ver%3D5.15.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="{%static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min_ver%3D5.15.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-edcare-core-fontawesome-icons-css" href="{%static 'wp-content/plugins/edcare-core/assets/css/fontawesome-all.min_ver%3D1.0.0.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="wc-blocks-style-css" href="{%static 'wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks_ver%3Dwc-10.0.4.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-1374-css" href="{%static 'wp-content/uploads/elementor/css/post-1374_ver%3D1753978227.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-5546-css" href="{%static 'wp-content/uploads/elementor/css/post-5546_ver%3D1753978227.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-820-css" href="{%static 'wp-content/uploads/elementor/css/post-820_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-841-css" href="{%static 'wp-content/uploads/elementor/css/post-841_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-838-css" href="{%static 'wp-content/uploads/elementor/css/post-838_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-835-css" href="{%static 'wp-content/uploads/elementor/css/post-835_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-832-css" href="{%static 'wp-content/uploads/elementor/css/post-832_ver%3D1753978777.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-829-css" href="{%static 'wp-content/uploads/elementor/css/post-829_ver%3D1753978778.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-826-css" href="{%static 'wp-content/uploads/elementor/css/post-826_ver%3D1753978778.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-823-css" href="{%static 'wp-content/uploads/elementor/css/post-823_ver%3D1753978778.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-post-1112-css" href="{%static 'wp-content/uploads/elementor/css/post-1112_ver%3D1753978778.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="widget-image-css" href="{%static 'wp-content/plugins/elementor/assets/css/widget-image.min_ver%3D3.30.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="widget-heading-css" href="{%static 'wp-content/plugins/elementor/assets/css/widget-heading.min_ver%3D3.30.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="widget-social-icons-css" href="{%static 'wp-content/plugins/elementor/assets/css/widget-social-icons.min_ver%3D3.30.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="e-apple-webkit-css" href="{%static 'wp-content/uploads/elementor/css/custom-apple-webkit.min_ver%3D1753978226.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="widget-icon-list-css" href="{%static 'wp-content/uploads/elementor/css/custom-widget-icon-list.min_ver%3D1753978226.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-outfit-css" href="{%static 'wp-content/uploads/elementor/google-fonts/css/outfit_ver%3D1742969266.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{%static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min_ver%3D5.15.3.css'%}" type="text/css" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="{%static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min_ver%3D5.15.3.css'%}" type="text/css" media="all">
+    
+    <style id="tutor-frontend-inline-css" type="text/css">
+        .mce-notification.mce-notification-error{display: none !important;}
+        :root{--tutor-color-primary:#3e64de;--tutor-color-primary-rgb:62, 100, 222;--tutor-color-primary-hover:#395bca;--tutor-color-primary-hover-rgb:57, 91, 202;--tutor-body-color:#212327;--tutor-body-color-rgb:33, 35, 39;--tutor-border-color:#cdcfd5;--tutor-border-color-rgb:205, 207, 213;--tutor-color-gray:#e3e5eb;--tutor-color-gray-rgb:227, 229, 235;}
+    </style>
+    <style id="woosw-frontend-inline-css" type="text/css">
+        .woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-notice { background-color: #5fbd74; } .woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-popup-content-bot-inner a:hover { color: #5fbd74; border-color: #5fbd74; } 
+    </style>
+    <style id="edcare-custom-inline-css" type="text/css">
+        html:root{
+            --ed-color-theme-primary: #07A698;
+            --ed-color-heading-primary: #162726;
+            --ed-color-grey-1: #F2F4F7;
+            --ed-color-text-body: #6C706F;
+            --ed-color-common-white: #ffffff;
+            --ed-color-common-black: #000000;
+            --ed-color-bg-1: #0E121D;
+            --ed-color-bg-2: #191A1F;
+            --ed-color-border-1: #E0E5EB;
+        }
+    </style>
+    <style id="kirki-inline-styles">
+        .mt-cursor:before{background:#07a698;}.scroll-to-top{background:#07A698;color:#ffffff;}#preloader{background:#fff;background-color:#fff;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.page-header-content .rr_edcare_breadcrumb__title{color:#162726;}.edcare-breadcrumb-padding{background-image:url("{%static 'wp-content/themes/edcare/assets/img/bg-img/page-header-bg.png'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.blog-details-overlay::after{background-image:url("wp-content/themes/edcare/assets/img/blog/blog-stories/blog-stories-bg.png'%}");background-color:rgba(0,0,0,.36);background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.edcare-lms-single-breadcrumb{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-2.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.tp-breadcrumb__bg.details3{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-3.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.footer-top-wrap{padding-bottom:80px;}.ed-default-footer.footer-section{background:#133432;background-color:#133432;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}@media (max-width: 767px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:40px;padding-bottom:40px;}}@media (min-width: 768px) and (max-width: 1023px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:70px;padding-bottom:70px;}}@media (min-width: 1024px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:100px;padding-bottom:100px;}}
+    </style>
+    <style>.elementor-5546 .elementor-element.elementor-element-d73d22a{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--padding-top:30px;--padding-bottom:30px;--padding-left:30px;--padding-right:30px;}.elementor-5546 .elementor-element.elementor-element-e4021b0{--display:flex;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li:not(:last-of-type){margin-bottom:16px!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li:hover{transform:translateX(10px)!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-megamenu-home-title{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li a{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-megamenu-home-title a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-701121a{--display:flex;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li:not(:last-of-type){margin-bottom:16px!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li:hover{transform:translateX(10px)!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-megamenu-home-title{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li a{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-megamenu-home-title a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li a:hover{color:#07A698!important;}</style>
+    <style id="etn-custom-css-inline-css" type="text/css">
+        .etn-event-single-content-wrap .etn-event-meta .etn-event-category span,
+        .etn-event-item .etn-event-footer .etn-atend-btn .etn-btn-border,
+        .etn-btn.etn-btn-border, .attr-btn-primary.etn-btn-border,
+        .etn-attendee-form .etn-btn.etn-btn-border,
+        .etn-ticket-widget .etn-btn.etn-btn-border,
+        .etn-settings-dashboard .button-primary.etn-btn-border,
+        .etn-single-speaker-item .etn-speaker-content a:hover,
+        .etn-event-style2 .etn-event-date,
+        .etn-event-style3 .etn-event-content .etn-title a:hover,
+        .event-tab-wrapper ul li a.etn-tab-a,
+        .etn-speaker-item.style-3:hover .etn-speaker-content .etn-title a,
+        .etn-variable-ticket-widget .ticket-header,
+        .events_calendar_list .calendar-event-details:hover .calendar-event-title,
+        .etn-event-item:hover .etn-title a,
+        .etn-recurring-widget .etn-date-text {
+            color: #5D78FF;
+        }
+        .etn-event-item .etn-event-category span,
+        .etn-btn, .attr-btn-primary,
+        .etn-attendee-form .etn-btn,
+        .etn-ticket-widget .etn-btn,
+        .schedule-list-1 .schedule-header,
+        .speaker-style4 .etn-speaker-content .etn-title a,
+        .etn-speaker-details3 .speaker-title-info,
+        .etn-event-slider .swiper-pagination-bullet, .etn-speaker-slider .swiper-pagination-bullet,
+        .etn-event-slider .swiper-button-next, .etn-event-slider .swiper-button-prev,
+        .etn-speaker-slider .swiper-button-next, .etn-speaker-slider .swiper-button-prev,
+        .etn-single-speaker-item .etn-speaker-thumb .etn-speakers-social a,
+        .etn-event-header .etn-event-countdown-wrap .etn-count-item,
+        .schedule-tab-1 .etn-nav li a.etn-active,
+        .schedule-list-wrapper .schedule-listing.multi-schedule-list .schedule-slot-time,
+        .etn-speaker-item.style-3 .etn-speaker-content .etn-speakers-social a,
+        .event-tab-wrapper ul li a.etn-tab-a.etn-active,
+        .etn-btn, button.etn-btn.etn-btn-primary,
+        .etn-schedule-style-3 ul li:before,
+        .etn-zoom-btn,
+        .cat-radio-btn-list [type=radio]:checked+label:after,
+        .cat-radio-btn-list [type=radio]:not(:checked)+label:after,
+        .etn-default-calendar-style .fc-button:hover,
+        .etn-default-calendar-style .fc-state-highlight,
+        .etn-calender-list a:hover,
+        .events_calendar_standard .cat-dropdown-list select,
+        .etn-event-banner-wrap,
+        .events_calendar_list .calendar-event-details .calendar-event-content .calendar-event-category-wrap .etn-event-category,
+        .etn-variable-ticket-widget .etn-add-to-cart-block,
+        .etn-recurring-event-wrapper #seeMore,
+        .more-event-tag,
+        .etn-settings-dashboard .button-primary{
+            background-color: #5D78FF;
+        }
+
+        .etn-event-item .etn-event-footer .etn-atend-btn .etn-btn-border,
+        .etn-btn.etn-btn-border, .attr-btn-primary.etn-btn-border,
+        .etn-attendee-form .etn-btn.etn-btn-border,
+        .etn-ticket-widget .etn-btn.etn-btn-border,
+        .event-tab-wrapper ul li a.etn-tab-a,
+        .event-tab-wrapper ul li a.etn-tab-a.etn-active,
+        .etn-schedule-style-3 ul li:after,
+        .etn-default-calendar-style .fc-ltr .fc-basic-view .fc-day-top.fc-today .fc-day-number,
+        .etn-default-calendar-style .fc-button:hover,
+        .etn-variable-ticket-widget .etn-variable-total-price,
+        .etn-settings-dashboard .button-primary.etn-btn-border{
+            border-color: #5D78FF;
+        }
+        .schedule-tab-wrapper .etn-nav li a.etn-active,
+        .etn-speaker-item.style-3 .etn-speaker-content{
+            border-bottom-color: #5D78FF;
+        }
+        .schedule-tab-wrapper .etn-nav li a:after,
+        .etn-event-list2 .etn-event-content,
+        .schedule-tab-1 .etn-nav li a.etn-active:after{
+            border-color: #5D78FF transparent transparent transparent;
+        }
+
+        .etn-default-calendar-style .fc .fc-daygrid-bg-harness:first-of-type:before{
+            background-color: #5D78FF2A;
+        }
+        .sidebar .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        .left-sidebar .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        .right-sidebar .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        .widget .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        .widgets .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        .main-sidebar .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before,
+        #sidebar .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before{
+            background-color: #5D78FF;
+        }
+
+
+        .etn-event-item .etn-event-location,
+        .etn-event-tag-list a:hover,
+        .etn-schedule-wrap .etn-schedule-info .etn-schedule-time{
+            color: ;
+        }
+        .etn-event-tag-list a:hover{
+            border-color: ;
+        }
+        .etn-btn:hover, .attr-btn-primary:hover,
+        .etn-attendee-form .etn-btn:hover,
+        .etn-ticket-widget .etn-btn:hover,
+        .speaker-style4 .etn-speaker-content p,
+        .etn-btn, button.etn-btn.etn-btn-primary:hover,
+        .etn-zoom-btn,
+        .events_calendar_list .calendar-event-details .event-calendar-action .etn-btn, .events_calendar_list .calendar-event-details .event-calendar-action .etn-price.event-calendar-details-btn,
+        .etn-speaker-item.style-3 .etn-speaker-content .etn-speakers-social a:hover,
+        .etn-single-speaker-item .etn-speaker-thumb .etn-speakers-social a:hover,
+        .etn-recurring-event-wrapper #seeMore:hover, .etn-recurring-event-wrapper #seeMore:focus,
+        .etn-settings-dashboard .button-primary:hover{
+            background-color: ;
+        }
+        .events_calendar_list .calendar-event-details .event-calendar-action .etn-btn {
+            max-width: 120px;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+        }
+    </style>
+    
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery.min_ver%3D3.7.1.js'%}" id="jquery-core-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery-migrate.min_ver%3D3.4.1.js'%}" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min_ver%3D2.7.0-wc.10.0.4.js'%}" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" id="wc-add-to-cart-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min_ver%3D10.0.4.js'%}" id="wc-add-to-cart-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min_ver%3D2.1.4-wc.10.0.4.js'%}" id="js-cookie-js" data-wp-strategy="defer"></script>
+    <script type="text/javascript" id="woocommerce-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min_ver%3D10.0.4.js'%}" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/hooks.min_ver%3D4d63a3d491d11ffd8ac6.js'%}" id="wp-hooks-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/i18n.min_ver%3D5e580eb46a90c2b997e6.js'%}" id="wp-i18n-js"></script>
+    <script type="text/javascript" id="wp-i18n-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/contact-form-7/includes/swv/js/index_ver%3D6.1.js'%}" id="swv-js"></script>
+    <script type="text/javascript" id="contact-form-7-js-before"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/contact-form-7/includes/js/index_ver%3D6.1.js'%}" id="contact-form-7-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-filter-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-filter_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-filter-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-filter-open-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-filter-open_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-filter-open-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-tab-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-tab_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-tab-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/react.min_ver%3D18.3.1.1.js'%}" id="react-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/react-dom.min_ver%3D18.3.1.1.js'%}" id="react-dom-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/escape-html.min_ver%3D6561a406d2d232a6fbd2.js'%}" id="wp-escape-html-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/element.min_ver%3Da4eeeadd23c0d7ab1d2d.js'%}" id="wp-element-js"></script>
+    <script type="text/javascript" id="tutor-script-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/js/tutor_ver%3D3.7.0.js'%}" id="tutor-script-js"></script>
+    <script type="text/javascript" id="quicktags-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/quicktags.min_ver%3D6.8.2.js'%}" id="quicktags-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/core.min_ver%3D1.13.3.js'%}" id="jquery-ui-core-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/mouse.min_ver%3D1.13.3.js'%}" id="jquery-ui-mouse-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/sortable.min_ver%3D1.13.3.js'%}" id="jquery-ui-sortable-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery.ui.touch-punch_ver%3D0.2.2.js'%}" id="jquery-touch-punch-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/lib/SocialShare/SocialShare.min_ver%3D3.7.0.js'%}" id="tutor-social-share-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/moment.min_ver%3D2.30.1.js'%}" id="moment-js"></script>
+    <script type="text/javascript" id="moment-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/deprecated.min_ver%3De1f84915c5e8ae38964c.js'%}" id="wp-deprecated-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/date.min_ver%3D85ff222add187a4e358f.js'%}" id="wp-date-js"></script>
+    <script type="text/javascript" id="wp-date-js-after"></script>
+    <script type="text/javascript" id="tutor-frontend-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/js/tutor-front_ver%3D3.7.0.js'%}" id="tutor-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/datepicker.min_ver%3D1.13.3.js'%}" id="jquery-ui-datepicker-js"></script>
+    <script type="text/javascript" id="jquery-ui-datepicker-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.min_ver%3D5.0.1.js'%}" id="perfect-scrollbar-js"></script>
+    <script type="text/javascript" id="woosw-frontend-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woo-smart-wishlist/assets/js/frontend_ver%3D5.0.1.js'%}" id="woosw-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/wp-event-solution/build/js/i18n-loader_ver%3Dfbef8415e7614e18525d.js'%}" id="eventin-i18n-js"></script>
+    <script type="text/javascript" id="etn-public-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/wp-event-solution/build/js/event-manager-public_ver%3D5556d15c96e27274a6b1.js'%}" id="etn-public-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/bootstrap-bundle_ver%3D6.8.2.js'%}" id="bootstrap-bundle-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/countdown_ver%3D6.8.2.js'%}" id="countdown-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/daterangepicker.min_ver%3D6.8.2.js'%}" id="daterangepicker-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/imagesloaded.min_ver%3D5.0.0.js'%}" id="imagesloaded-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/jquery.isotope_ver%3D6.8.2.js'%}" id="isotope-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/meanmenu_ver%3D6.8.2.js'%}" id="meanmenu-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/nice-select_ver%3D6.8.2.js'%}" id="nice-select-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/jquery.carouselTicker_ver%3D6.8.2.js'%}" id="carouselTicker-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/odometer.min_ver%3D6.8.2.js'%}" id="odometer-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/smooth-scroll_ver%3D6.8.2.js'%}" id="smooth-scroll-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min_ver%3D8.4.5.js'%}" id="swiper-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/venobox.min_ver%3D6.8.2.js'%}" id="venobox-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/waypoints.min_ver%3D6.8.2.js'%}" id="waypoints-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/modernizr.min_ver%3D6.8.2.js'%}" id="modernizr-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/wow.min_ver%3D6.8.2.js'%}" id="wow-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/main_ver%3D6.8.2.js'%}" id="edcare-main-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/edcare-slider_ver%3D6.8.2.js'%}" id="edcare-slider-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/edcare-elementor_ver%3D6.8.2.js'%}" id="edcare-elementor-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min_ver%3D10.0.4.js'%}" id="sourcebuster-js-js"></script>
+    <script type="text/javascript" id="wc-order-attribution-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min_ver%3D10.0.4.js'%}" id="wc-order-attribution-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/webpack.runtime.min_ver%3D3.30.3.js'%}" id="elementor-webpack-runtime-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/frontend-modules.min_ver%3D3.30.3.js'%}" id="elementor-frontend-modules-js"></script>
+    <script type="text/javascript" id="elementor-frontend-js-before"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/frontend.min_ver%3D3.30.3.js'%}" id="elementor-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/hello-world_ver%3D6.8.2.js'%}" id="edcare_core-js"></script>
+</head>
+<body class="rtl">
+
+    <div id="preloader">
+        <div class="spinner-logo">
+            <img src="{%static 'wp-content/themes/edcare/assets/img/favicon.png'%}" alt="شعار ADH">
+        </div>
+        <div class="spinner"></div>
+    </div>
+    <div id="scrollup">
+        <button id="scroll-top" class="scroll-to-top"><i class="fa-regular fa-arrow-up-long"></i></button>
+    </div>
+    <header class="header header-3 sticky-active">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-inner">
+                    <div class="top-bar-left">
+                        <ul class="top-bar-list">
+                            <li>
+                                <i class="fa-regular fa-phone"></i>
+                                <a href="tel:+256214203215">256 214 203 215</a>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-location-dot"></i>
+                                <span>258 شارع هيلانو، نيويورك</span>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-clock"></i>
+                                <span>الاثنين - السبت: 8:00 - 15:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="register-box">
+                            <div class="icon"><i class="fa-regular fa-user"></i></div>
+                            <a href="{%url 'login' %}">تسجيل الدخول</a>
+                            <span class="header-login-separator">/</span>
+                            <a href="{%url 'register' %}">التسجيل</a>
+                        </div>
+                        <div class="top-social-wrap">
+                            <span>تابعنا:</span>
+                            <ul class="social-list">
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block">
+                        <a href="#">
+                            <img src="{%static 'wp-content/uploads/2024/12/logo-black.png'%}" alt="شعار ADH">
+                        </a>
+                    </div>
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul id="menu-1-c78ae76" class="edcare-nav-menu sub-menu">
+                                <li class="menu-item"><a href="{%url 'home' %}" class="nav-links">الرئيسية</a></li>
+                                <li class="menu-item"><a href="#" class="nav-links">الصفحات</a></li>
+                                <li class="menu-item"><a href="#" class="nav-links">المتجر</a></li>
+                                <li class="menu-item"><a href="""" class="nav-links">الدورات</a></li>
+                                <li class="menu-item"><a href="#" class="nav-links">المدونة</a></li>
+                                <li class="menu-item"><a href="#" class="nav-links">اتصل بنا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right">
+                            <div class="header-right-icon d-xl-block d-lg-none">
+                                <a href="#">
+                                    <i class="fa-sharp fa-regular fa-heart"></i>
+                                </a>
+                                <span class="number">1</span>
+                            </div>
+                            <div class="header-right-icon shop-btn">
+                                <a href="#">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </a>
+                                <span class="number">0</span>
+                            </div>
+                            <a href="#" class="ed-primary-btn header-btn edcare-el-btn">ابدأ تجربتك المجانية</a>
+                            <div class="header-logo d-none d-lg-none">
+                                <a href="#">
+                                    <img src="{%static 'wp-content/uploads/2024/12/logo-black.png'%}" alt="">
+                                </a>
+                            </div>
+                            <div class="header-right-item d-lg-none d-md-block">
+                                <button class="mobile-side-menu-toggle">
+                                    <i class="fa-sharp fa-solid fa-bars"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-side-menu">
+        <div class="side-menu-content">
+            <div class="side-menu-head">
+                <a href="#">
+                    <img src="{%static 'wp-content/uploads/2024/12/logo-black.png'%}" alt="شعار ADH">
+                </a>
+                <button class="mobile-side-menu-close">
+                    <i class="fa-regular fa-xmark"></i>
+                </button>
+            </div>
+            <div class="side-menu-wrap"></div>
+            <ul class="side-menu-list">
+                <li><i class="fa-light fa-location-dot"></i>العنوان: <span>أمستردام، 109-74</span></li>
+                <li><i class="fa-light fa-phone"></i>الهاتف: <a href="tel:+01569896654">+01 569 896 654</a></li>
+                <li><i class="fa-light fa-envelope"></i>البريد الإلكتروني: <a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-side-menu-overlay"></div>
+
+    <section class="edcare-el-section hero-section hero-3 overflow-hidden">
+        <div class="hero-bottom-shape">
+            <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/hero-bottom-shape.png'%}" alt="شكل">
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/hero-shape-13.png'%}" alt="شكل">
+            </div>
+            <div class="shape shape-2">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/hero-shape-14.png'%}" alt="شكل">
+            </div>
+            <div class="shape shape-3">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/hero-shape-15.png'%}" alt="شكل">
+            </div>
+        </div>
+        <div class="hero-img-wrap-3">
+            <div class="hero-img">
+                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/hero-men-3.png'%}" alt="صورة بطل">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero-content hero-content-3">
+                        <div class="section-heading mb-20">
+                            <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                                <span class="heading-icon">
+                                    <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                                </span>
+                                أكثر من 25,659+ طالب
+                            </h4>
+                            <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                                مزود التعلم عن بعد الرائد في العالم
+                            </h2>
+                        </div>
+                        <p class="edcare-el-section-description">
+                            أنا هنا لمساعدتك في العثور على الثقة التي تحتاجها للشعور بالروعة في جسدك!
+                            عندما قام طابع غير معروف بأخذ عينة من النصوص وخلطها.
+                        </p>
+                        <ul class="hero-list">
+                            <li>
+                                <div class="icon">
+                                    <i aria-hidden="true" class="fas fa-circle-check solid"></i>
+                                </div>
+                                خبراء مستشارين
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i aria-hidden="true" class="fas fa-circle-check solid"></i>
+                                </div>
+                                538+ دورة
+                            </li>
+                        </ul>
+                        <div class="hero-btn-wrap mb-0">
+                            <a href="#" class="edcare-el-button ed-primary-btn">ابدأ</a>
+                            <a href="""" class="edcare-el-button-two ed-primary-btn hero-btn-2">دوراتنا</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section about-section-3 pt-120 pb-120">
+        <div class="shapes">
+            <div class="shape shape-1">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/about-shape-1.png'%}" alt="شكل">
+            </div>
+            <div class="shape shape-2">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/about-shape-2.png'%}" alt="شكل">
+            </div>
+            <div class="shape shape-3">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/about-shape-3.png'%}" alt="شكل">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-img-wrap-3 wow fade-in-left" data-wow-delay="400ms">
+                        <div class="about-img">
+                            <img decoding="async" class="main-img" src="{%static 'wp-content/uploads/2024/12/about-img-3.png'%}" alt="صورة عنا">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-content-3">
+                        <div class="section-heading mb-20">
+                            <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="300ms">
+                                <span class="heading-icon">
+                                    <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                                </span>
+                                عن منصتنا
+                            </h4>
+                            <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                                نحن مؤسسة تعليمية مبتكرة لخلق الطالب
+                            </h2>
+                        </div>
+                        <p class="edcare-el-section-description mb-30 wow fade-in-bottom" data-wow-delay="500ms">
+                            يتكون فريقنا من محترفي تكنولوجيا المعلومات المعتمدين ذوي الخبرة في أمان الشبكات والحوسبة السحابية وتطوير البرمجيات والدعم الفني. مع عقود من الخبرة المجمعة، نقدم توجيهات تكنولوجيا المعلومات الاستراتيجية والدعم الفني المصمم خصيصًا لتلبية احتياجات عملك.
+                        </p>
+                        <a href="""" class="edcare-el-button ed-primary-btn">تصفح جميع الدورات<i class="fal fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section cta-section-3 pt-120 pb-120" data-background="{%static 'wp-content/uploads/2024/12/cta-bg.png'%}">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="cta-content cta-content-3 text-center">
+                <div class="section-heading text-center white-content mb-30">
+                    <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                        <span class="heading-icon">
+                            <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                        </span>
+                        ادرس معنا
+                    </h4>
+                    <h2 class="edcare-el-section-title section-title mt-10 wow fade-in-bottom" data-wow-delay="400ms">
+                        خصم 50% لأول 50 طالبًا وموجهًا
+                    </h2>
+                </div>
+                <div class="cta-btn-wrap wow fade-in-bottom" data-wow-delay="500ms">
+                    <a href="#" class="edcare-el-button ed-primary-btn cta-btn">كن طالبًا<i class="fal fa-arrow-right"></i></a>
+                    <a href="#" class="edcare-el-button-two ed-primary-btn cta-btn-2">كن معلمًا<i class="fal fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section feature-course feature-course-2 pt-120 pb-120">
+        <div class="shapes">
+            <div class="shape-1">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/feature-shape-1.png'%}" alt="شكل">
+            </div>
+            <div class="shape-2">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/feature-shape-2.png'%}" alt="شكل">
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-heading text-center white-content">
+                <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                    <span class="heading-icon">
+                        <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                    </span>
+                    دوراتنا المتميزة
+                </h4>
+                <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                    استكشف الدورات المميزة
+                </h2>
+            </div>
+            <div class="course-tab-content tab-content">
+                <div class="tab-pane fade show active" id="home-1" role="tabpanel">
+                    <div class="row gy-4 justify-content-center">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-05.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تصميم UI/UX</span>
+                                    <h3 class="title"><a href="#">أساسيات تصميم UI UX الكاملة باستخدام Figma</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-03.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تصميم ويب</span>
+                                    <h3 class="title"><a href="#">بناء مواقع ويب متجاوبة باستخدام HTML</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
+                                        <li><i class="fa-light fa-user"></i>18 طالب</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-04.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تصميم ويب</span>
+                                    <h3 class="title"><a href="#">دورة React للمبتدئين لبناء المهارات</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-09.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تصميم UI/UX</span>
+                                    <h3 class="title"><a href="#">إتقان Adobe Illustrator: المهارات الأساسية للتصميم الجرافيكي</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>6 دروس</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-10.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تحرير الفيديو</span>
+                                    <h3 class="title"><a href="#">دورة Adobe Premiere Pro Masterclass: تحرير الفيديو</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>9 دروس</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="course-item dark-item">
+                                <div class="course-thumb-wrap">
+                                    <div class="course-thumb">
+                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-11.jpg'%}" alt="صورة الدورة">
+                                    </div>
+                                </div>
+                                <div class="course-content">
+                                    <span class="offer">تصميم ويب</span>
+                                    <h3 class="title"><a href="#">إتقان Webflow: بناء مواقع ويب مذهلة بدون كود</a></h3>
+                                    <ul class="course-list">
+                                        <li><i class="fa-light fa-file"></i>14 درس</li>
+                                        <li><i class="fa-light fa-user"></i>4 طلاب</li>
+                                    </ul>
+                                    <div class="course-author-box">
+                                        <div class="course-author">
+                                            <div class="author-img">
+                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
+                                            </div>
+                                            <div class="author-info">
+                                                <h4 class="name">محيي الدين سومون</h4>
+                                                <span>مطور ووردبريس</span>
+                                            </div>
+                                        </div>
+                                        <ul class="course-review">
+                                            <li class="point">(0)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <a href="#" class="course-btn">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section course-feature pt-120 pb-120">
+        <div class="container">
+            <div class="course-top heading-space">
+                <div class="section-heading mb-0">
+                    <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                        <span class="heading-icon">
+                            <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                        </span>
+                        ميزاتنا
+                    </h4>
+                    <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                        فئات دوراتنا
+                    </h2>
+                </div>
+            </div>
+            <div class="course-feature-carosuel swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="course-feature-item">
+                            <div class="course-feature-img">
+                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-1.png'%}" alt="صورة الفئة">
+                            </div>
+                            <div class="content text-center">
+                                <h3 class="title">
+                                    <a href="#">تطوير الويب</a>
+                                </h3>
+                                <span>189 دورة</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="course-feature-item">
+                            <div class="course-feature-img">
+                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-2.png'%}" alt="صورة الفئة">
+                            </div>
+                            <div class="content text-center">
+                                <h3 class="title">
+                                    <a href="#">نمو الأعمال</a>
+                                </h3>
+                                <span>122 دورة</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="course-feature-item">
+                            <div class="course-feature-img">
+                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-3.png'%}" alt="صورة الفئة">
+                            </div>
+                            <div class="content text-center">
+                                <h3 class="title">
+                                    <a href="#">تطوير الذات</a>
+                                </h3>
+                                <span>530 دورة</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="course-feature-item">
+                            <div class="course-feature-img">
+                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-4.png'%}" alt="صورة الفئة">
+                            </div>
+                            <div class="content text-center">
+                                <h3 class="title">
+                                    <a href="#">رعاية الطفل الخاصة</a>
+                                </h3>
+                                <span>199 دورة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section cta-section pt-140 pb-140">
+        <div class="cta-bg-img">
+            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/cta-bg-img.png'%}" alt="صورة CTA">
+        </div>
+        <div class="shapes">
+            <div class="shape shape-1">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/dot-shape.png'%}" alt="شكل">
+            </div>
+            <div class="shape shape-2">
+                <img decoding="async" src="{%static 'wp-content/themes/edcare/assets/img/shapes/cta-shape-2.png'%}" alt="شكل">
+            </div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="edcare-el-section-title title wow fade-in-bottom" data-wow-delay="200ms">
+                    خصم 50% لأول 50 طالبًا ومعلمًا
+                </h2>
+                <p class="edcare-el-section-description wow fade-in-bottom" data-wow-delay="400ms">
+                    "القدرة على التعلم بالسرعة الخاصة بي كانت بمثابة تغيير جذري بالنسبة لي. سمح لي الجدول المرن بموازنة دراستي مع العمل والحياة الشخصية، مما جعل من الممكن إكمال الدورة دون الشعور بالإرهاق."
+                </p>
+                <div class="cta-btn-wrap wow fade-in-bottom" data-wow-delay="500ms">
+                    <a href="#" class="edcare-el-button ed-primary-btn cta-btn">كن طالبًا<i class="fal fa-arrow-right"></i></a>
+                    <a href="#" class="edcare-el-button-two ed-primary-btn cta-btn-2">كن معلمًا<i class="fal fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="e-con-inner">
+            <div class="elementor-element">
+                <div class="elementor-widget-container">
+                    <div class="edcare-el-section section-heading mb-40">
+                        <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                            <span class="heading-icon"><i aria-hidden="true" class="fas fa-bolt fa-solid"></i></span>
+                            معلمونا
+                        </h4>
+                        <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                            قابل معلمنا الخبير
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item-3 wow fade-in-bottom" data-wow-delay="200">
+                    <div class="team-thumb-wrap">
+                        <div class="team-thumb">
+                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.png'%}" alt="صورة المعلم">
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title"><a href="#">ماسون د. لوغان</a></h3>
+                        <span>مدرب تكنولوجيا المعلومات</span>
+                        <ul class="social-list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item-3 wow fade-in-bottom" data-wow-delay="400">
+                    <div class="team-thumb-wrap">
+                        <div class="team-thumb">
+                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-10.png'%}" alt="صورة المعلم">
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title"><a href="#">إيزابيلا إ. أوليفيا</a></h3>
+                        <span>مدرب تكنولوجيا المعلومات</span>
+                        <ul class="social-list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item-3 wow fade-in-bottom" data-wow-delay="500">
+                    <div class="team-thumb-wrap">
+                        <div class="team-thumb">
+                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-11.png'%}" alt="صورة المعلم">
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title"><a href="#">ديفيد ر. كونور</a></h3>
+                        <span>مدرب تكنولوجيا المعلومات</span>
+                        <ul class="social-list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="edcare-el-section testimonial-section-2">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                    <span class="heading-icon">
+                        <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                    </span>
+                    آراء طلابنا
+                </h4>
+                <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                    ملاحظات من طلابنا
+                </h2>
+            </div>
+            <div class="testi-carousel swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testi-item-2">
+                            <div class="testi-top-content">
+                                <div class="testi-thumb">
+                                    <img decoding="async" src="{%static 'wp-content/uploads/2024/12/testi-author-1.png'%}" alt="صورة المؤلف">
+                                </div>
+                                <p>"الدورة تجاوزت توقعاتي من جميع النواحي. كانت المواد منظمة جيدًا وسهلة المتابعة، مما جعل حتى أكثر المفاهيم تعقيدًا قابلة للفهم."</p>
+                            </div>
+                            <div class="testi-bottom">
+                                <div class="author-info">
+                                    <h4 class="name">إنديجو فيوليت</h4>
+                                    <span>مدير، Thump Coffee</span>
+                                </div>
+                                <ul class="testi-review" data-rate="5">
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="point">(5)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testi-item-2">
+                            <div class="testi-top-content">
+                                <div class="testi-thumb">
+                                    <img decoding="async" src="{%static 'wp-content/uploads/2024/12/testi-author-2.png'%}" alt="صورة المؤلف">
+                                </div>
+                                <p>"الدورة تجاوزت توقعاتي من جميع النواحي. كانت المواد منظمة جيدًا وسهلة المتابعة، مما جعل حتى أكثر المفاهيم تعقيدًا قابلة للفهم."</p>
+                            </div>
+                            <div class="testi-bottom">
+                                <div class="author-info">
+                                    <h4 class="name">مايكل توماس</h4>
+                                    <span>مدير، Plan4Demand</span>
+                                </div>
+                                <ul class="testi-review" data-rate="5">
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
+                                    <li class="point">(5)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section class="edcare-el-section blog-section pt-120 pb-120">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                    <span class="heading-icon">
+                        <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
+                    </span>
+                    أخبار ومدونات
+                </h4>
+                <h2 class="edcare-el-section-title section-title wow fade-in-bottom" data-wow-delay="400ms">
+                    أحدث الأخبار
+                </h2>
+            </div>
+            <div class="row gy-lg-0 gy-4 justify-content-center post-card-2-wrap">
+                <div class="col-lg-4 col-md-6">
+                    <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="300ms">
+                        <img fetchpriority="high" decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-11.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
+                        <div class="post-content-wrap">
+                            <div class="post-content">
+                                <ul class="post-meta">
+                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
+                                    <li><i class="fa-sharp fa-regular fa-folder"></i>علوم</li>
+                                </ul>
+                                <h3 class="title"><a href="#">أفضل الممارسات لتحقيق إنجازات الطلاب للمدارس والعائلات</a></h3>
+                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="400ms">
+                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-07.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
+                        <div class="post-content-wrap">
+                            <div class="post-content">
+                                <ul class="post-meta">
+                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
+                                    <li><i class="fa-sharp fa-regular fa-folder"></i>فنون</li>
+                                </ul>
+                                <h3 class="title"><a href="#">أهمية دمج الفنون في العلوم والتكنولوجيا</a></h3>
+                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="500ms">
+                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-06.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
+                        <div class="post-content-wrap">
+                            <div class="post-content">
+                                <ul class="post-meta">
+                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
+                                    <li><i class="fa-sharp fa-regular fa-folder"></i>مدرسة</li>
+                                </ul>
+                                <h3 class="title"><a href="#">بناء المرونة والتعاطف في الفصل الدراسي</a></h3>
+                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery.min_ver%3D3.7.1.js'%}" id="jquery-core-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery-migrate.min_ver%3D3.4.1.js'%}" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min_ver%3D2.7.0-wc.10.0.4.js'%}" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" id="wc-add-to-cart-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min_ver%3D10.0.4.js'%}" id="wc-add-to-cart-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min_ver%3D2.1.4-wc.10.0.4.js'%}" id="js-cookie-js" data-wp-strategy="defer"></script>
+    <script type="text/javascript" id="woocommerce-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min_ver%3D10.0.4.js'%}" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/hooks.min_ver%3D4d63a3d491d11ffd8ac6.js'%}" id="wp-hooks-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/i18n.min_ver%3D5e580eb46a90c2b997e6.js'%}" id="wp-i18n-js"></script>
+    <script type="text/javascript" id="wp-i18n-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/contact-form-7/includes/swv/js/index_ver%3D6.1.js'%}" id="swv-js"></script>
+    <script type="text/javascript" id="contact-form-7-js-before"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/contact-form-7/includes/js/index_ver%3D6.1.js'%}" id="contact-form-7-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-filter-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-filter_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-filter-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-filter-open-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-filter-open_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-filter-open-js"></script>
+    <script type="text/javascript" id="ac-learnpress-ajax-tab-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/learnpress-ajax-tab_ver%3D6.8.2.js'%}" id="ac-learnpress-ajax-tab-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/react.min_ver%3D18.3.1.1.js'%}" id="react-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/react-dom.min_ver%3D18.3.1.1.js'%}" id="react-dom-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/escape-html.min_ver%3D6561a406d2d232a6fbd2.js'%}" id="wp-escape-html-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/element.min_ver%3Da4eeeadd23c0d7ab1d2d.js'%}" id="wp-element-js"></script>
+    <script type="text/javascript" id="tutor-script-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/js/tutor_ver%3D3.7.0.js'%}" id="tutor-script-js"></script>
+    <script type="text/javascript" id="quicktags-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/quicktags.min_ver%3D6.8.2.js'%}" id="quicktags-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/core.min_ver%3D1.13.3.js'%}" id="jquery-ui-core-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/mouse.min_ver%3D1.13.3.js'%}" id="jquery-ui-mouse-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/sortable.min_ver%3D1.13.3.js'%}" id="jquery-ui-sortable-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/jquery.ui.touch-punch_ver%3D0.2.2.js'%}" id="jquery-touch-punch-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/lib/SocialShare/SocialShare.min_ver%3D3.7.0.js'%}" id="tutor-social-share-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/vendor/moment.min_ver%3D2.30.1.js'%}" id="moment-js"></script>
+    <script type="text/javascript" id="moment-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/deprecated.min_ver%3De1f84915c5e8ae38964c.js'%}" id="wp-deprecated-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/dist/date.min_ver%3D85ff222add187a4e358f.js'%}" id="wp-date-js"></script>
+    <script type="text/javascript" id="wp-date-js-after"></script>
+    <script type="text/javascript" id="tutor-frontend-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/tutor/assets/js/tutor-front_ver%3D3.7.0.js'%}" id="tutor-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/jquery/ui/datepicker.min_ver%3D1.13.3.js'%}" id="jquery-ui-datepicker-js"></script>
+    <script type="text/javascript" id="jquery-ui-datepicker-js-after"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.min_ver%3D5.0.1.js'%}" id="perfect-scrollbar-js"></script>
+    <script type="text/javascript" id="woosw-frontend-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woo-smart-wishlist/assets/js/frontend_ver%3D5.0.1.js'%}" id="woosw-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/wp-event-solution/build/js/i18n-loader_ver%3Dfbef8415e7614e18525d.js'%}" id="eventin-i18n-js"></script>
+    <script type="text/javascript" id="etn-public-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/wp-event-solution/build/js/event-manager-public_ver%3D5556d15c96e27274a6b1.js'%}" id="etn-public-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/bootstrap-bundle_ver%3D6.8.2.js'%}" id="bootstrap-bundle-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/countdown_ver%3D6.8.2.js'%}" id="countdown-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/daterangepicker.min_ver%3D6.8.2.js'%}" id="daterangepicker-js"></script>
+    <script type="text/javascript" src="{%static 'wp-includes/js/imagesloaded.min_ver%3D5.0.0.js'%}" id="imagesloaded-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/jquery.isotope_ver%3D6.8.2.js'%}" id="isotope-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/meanmenu_ver%3D6.8.2.js'%}" id="meanmenu-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/nice-select_ver%3D6.8.2.js'%}" id="nice-select-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/jquery.carouselTicker_ver%3D6.8.2.js'%}" id="carouselTicker-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/odometer.min_ver%3D6.8.2.js'%}" id="odometer-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min_ver%3D8.4.5.js'%}" id="swiper-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/venobox.min_ver%3D6.8.2.js'%}" id="venobox-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/waypoints.min_ver%3D6.8.2.js'%}" id="waypoints-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/modernizr.min_ver%3D6.8.2.js'%}" id="modernizr-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/wow.min_ver%3D6.8.2.js'%}" id="wow-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/main_ver%3D6.8.2.js'%}" id="edcare-main-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/edcare-slider_ver%3D6.8.2.js'%}" id="edcare-slider-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/themes/edcare/assets/js/edcare-elementor_ver%3D6.8.2.js'%}" id="edcare-elementor-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min_ver%3D10.0.4.js'%}" id="sourcebuster-js-js"></script>
+    <script type="text/javascript" id="wc-order-attribution-js-extra"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min_ver%3D10.0.4.js'%}" id="wc-order-attribution-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/webpack.runtime.min_ver%3D3.30.3.js'%}" id="elementor-webpack-runtime-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/frontend-modules.min_ver%3D3.30.3.js'%}" id="elementor-frontend-modules-js"></script>
+    <script type="text/javascript" id="elementor-frontend-js-before"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/elementor/assets/js/frontend.min_ver%3D3.30.3.js'%}" id="elementor-frontend-js"></script>
+    <script type="text/javascript" src="{%static 'wp-content/plugins/edcare-core/assets/js/hello-world_ver%3D6.8.2.js'%}" id="edcare_core-js"></script>
+
+</body>
+</html>
