@@ -16,7 +16,7 @@ class CustomUserAdmin(UserAdmin):
     # تقسيم الحقول في صفحة التفاصيل
     fieldsets = (
         (None, {"fields": ("student_mobile", "password")}),
-        ("Personal Info", {"fields": ("first_name", "last_name", "age", "parent_mobile", "address", "city")}),
+        ("Personal Info", {"fields": ("first_name", "last_name", "age", "parent_mobile", "address", "city", "job_title", "image")}),
         ("Roles & Permissions", {"fields": ("role", "is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
         ("Important Dates", {"fields": ("last_login", "date_joined")}),
     )
@@ -25,7 +25,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             "classes": ("wide",),
-            "fields": ("student_mobile", "first_name", "last_name", "role", "password1", "password2", "is_active", "is_staff"),
+            "fields": ("student_mobile", "first_name", "last_name", "role", "job_title", "image", "password1", "password2", "is_active", "is_staff"),
         }),
     )
 

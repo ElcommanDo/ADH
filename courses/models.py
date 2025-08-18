@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField 
-
+from accounts.models import CustomUser
 class TimeStamp(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -23,7 +23,8 @@ class Course(TimeStamp):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name="courses")
     cover = models.ImageField(upload_to='courses_cover')
     hours = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True) 
+    is_active = models.BooleanField(default=True)
+    instructor = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title
