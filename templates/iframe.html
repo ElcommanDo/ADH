@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Infographic</title>
+    <!-- Tailwind CSS CDN for general page styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cairo Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            overflow: hidden;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-color: #f8f9fa;
+            cursor: grab; /* Default cursor */
+        }
+        #canvas-container.grabbing {
+            cursor: grabbing; /* Cursor when dragging */
+        }
+        canvas {
+            display: block;
+        }
+        .label {
+            position: absolute;
+            background: rgba(49, 110, 209, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Allows mouse events to pass through to the canvas */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        .label.visible {
+            opacity: 1;
+        }
+        .label:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <!-- 3D canvas will be placed here -->
+    </div>
+    
+    <!-- JavaScript for 3D rendering -->
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+
+        // --- Scene Setup ---
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        // Colors
+        const primaryColor = new THREE.Color(0x316ed1);
+        const secondaryColor = new THREE.Color(0x5890e7);
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+
+        // --- 3D Model Creation ---
+        const coreGeometry = new THREE.SphereGeometry(2, 32, 32);
+        const coreMaterial = new THREE.MeshStandardMaterial({ color: primaryColor, metalness: 0.2, roughness: 0.5 });
+        const core = new THREE.Mesh(coreGeometry, coreMaterial);
+        scene.add(core);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const axisData = [
+            { name: "خدمات تكنولوجية", position: new THREE.Vector3(0, 6, 0) },
+            { name: "خدمات تعليمية", position: new THREE.Vector3(5.196, 3, 0) },
+            { name: "لغات", position: new THREE.Vector3(5.196, -3, 0) },
+            { name: "ريادة أعمال وإبتكار", position: new THREE.Vector3(0, -6, 0) },
+            { name: "منح وتوظيف", position: new THREE.Vector3(-5.196, -3, 0) },
+            { name: "برامج قوميه", position: new THREE.Vector3(-5.196, 3, 0) }
+        ];
+
+        const axisGeometry = new THREE.BoxGeometry(0.5, 4, 0.5);
+        const axisMaterial = new THREE.MeshStandardMaterial({ color: secondaryColor, metalness: 0.2, roughness: 0.5 });
+
+        axisData.forEach((data, index) => {
+            const axis = new THREE.Mesh(axisGeometry, axisMaterial);
+            axis.position.copy(data.position);
+            axis.lookAt(core.position); // Point the block towards the center
+            group.add(axis);
+            data.mesh = axis;
+        });
+
+        // --- Text Labels ---
+        const labelsContainer = document.createElement('div');
+        container.appendChild(labelsContainer);
+
+        axisData.forEach(data => {
+            const labelDiv = document.createElement('div');
+            labelDiv.className = 'label';
+            labelDiv.textContent = data.name;
+            labelsContainer.appendChild(labelDiv);
+            data.labelDiv = labelDiv;
+        });
+
+        // --- Animation & Interaction ---
+        camera.position.z = 20;
+        camera.position.y = 5;
+        camera.lookAt(core.position);
+
+        const clock = new THREE.Clock();
+        let isDragging = false;
+        let previousPosition = { x: 0, y: 0 };
+        const rotationSpeed = 0.015;
+
+        const handleInteractionStart = (clientX, clientY) => {
+            isDragging = true;
+            previousPosition.x = clientX;
+            previousPosition.y = clientY;
+            container.classList.add('grabbing');
+        };
+
+        const handleInteractionEnd = () => {
+            isDragging = false;
+            container.classList.remove('grabbing');
+        };
+
+        const handleInteractionMove = (clientX, clientY) => {
+            if (!isDragging) return;
+            const deltaX = clientX - previousPosition.x;
+            const deltaY = clientY - previousPosition.y;
+
+            const yAxis = new THREE.Vector3(0, 1, 0);
+            const xAxis = new THREE.Vector3(1, 0, 0);
+
+            group.rotateOnWorldAxis(yAxis, deltaX * rotationSpeed);
+            group.rotateOnWorldAxis(xAxis, deltaY * rotationSpeed);
+
+            previousPosition.x = clientX;
+            previousPosition.y = clientY;
+        };
+
+        // Mouse events
+        container.addEventListener('mousedown', (e) => handleInteractionStart(e.clientX, e.clientY));
+        container.addEventListener('mouseup', handleInteractionEnd);
+        container.addEventListener('mouseleave', handleInteractionEnd);
+        container.addEventListener('mousemove', (e) => handleInteractionMove(e.clientX, e.clientY));
+
+        // Touch events for mobile compatibility
+        container.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (e.touches.length === 1) {
+                handleInteractionStart(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        });
+        container.addEventListener('touchend', handleInteractionEnd);
+        container.addEventListener('touchcancel', handleInteractionEnd);
+        container.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            if (e.touches.length === 1) {
+                handleInteractionMove(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Pulse animation for the core
+            const elapsedTime = clock.getElapsedTime();
+            const scaleFactor = 1 + Math.sin(elapsedTime * 2) * 0.05;
+            core.scale.set(scaleFactor, scaleFactor, scaleFactor);
+
+            // Continuous slow rotation (increased speed)
+            group.rotation.y += 0.005;
+            group.rotation.x += 0.002;
+
+            // Update label positions and visibility
+            axisData.forEach(data => {
+                const vector = new THREE.Vector3();
+                data.mesh.getWorldPosition(vector);
+                
+                vector.project(camera);
+                
+                const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
+                const y = (vector.y * -0.5 + 0.5) * window.innerHeight;
+                
+                data.labelDiv.style.left = `${x}px`;
+                data.labelDiv.style.top = `${y}px`;
+                
+                // Hide labels when they are behind the camera
+                if (vector.z < 1) {
+                    data.labelDiv.classList.add('visible');
+                } else {
+                    data.labelDiv.classList.remove('visible');
+                }
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Start the animation
+        animate();
+    </script>
+</body>
+</html>
