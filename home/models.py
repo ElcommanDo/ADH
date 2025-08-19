@@ -23,7 +23,8 @@ class StudnetsReview(TimeStamp):
     name = models.CharField(max_length=150)
     description = models.TextField()
     job_title = models.CharField(max_length=100)
-    
+    image = models.ImageField(upload_to='reviews', null=True, blank=True)
+
     def __str__(self):
         return f"Review from {self.name}"
     

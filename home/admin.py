@@ -36,7 +36,7 @@ class StudnetsReviewAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ("Review Info", {
-            "fields": ("name", "job_title", "description")
+            "fields": ("name", "job_title", "description", "image")
         }),
         ("Timestamps", {
             "fields": ("created_at", "updated_at"),

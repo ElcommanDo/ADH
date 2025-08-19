@@ -67,7 +67,16 @@
     <link rel="stylesheet" id="elementor-gf-local-outfit-css" href="{%static 'css/outfit.css'%}" type="text/css" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{%static 'css/brands.min.css'%}" type="text/css" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="{%static 'css/regular.min.css'%}" type="text/css" media="all">
-    
+    <style>
+        .circle-image {
+  width: 150px;        /* العرض */
+  height: 150px;       /* الطول */
+  border-radius: 50%;  /* يخلي الصورة دائرة */
+  object-fit: cover;   /* يظبط الصورة جوه الدائرة */
+  border: 2px solid #ddd; /* اختياري: إطار حوالين الصورة */
+}
+
+    </style>
     <style id="tutor-frontend-inline-css" type="text/css">
         .edcare-el-button .ed-primary-btn a{
             background-color: #316ed1 !important;
@@ -80,7 +89,7 @@
     </style>
     <style id="edcare-custom-inline-css" type="text/css">
         html:root{
-            --ed-color-theme-primary: #07A698;
+            --ed-color-theme-primary: #316ed1;
             --ed-color-heading-primary: #162726;
             --ed-color-grey-1: #F2F4F7;
             --ed-color-text-body: #6C706F;
@@ -92,7 +101,7 @@
         }
     </style>
     <style id="kirki-inline-styles">
-        .mt-cursor:before{background:#07a698;}.scroll-to-top{background:#07A698;color:#ffffff;}#preloader{background:#fff;background-color:#fff;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.page-header-content .rr_edcare_breadcrumb__title{color:#162726;}.edcare-breadcrumb-padding{background-image:url("{%static 'wp-content/themes/edcare/assets/img/bg-img/page-header-bg.png'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.blog-details-overlay::after{background-image:url("wp-content/themes/edcare/assets/img/blog/blog-stories/blog-stories-bg.png'%}");background-color:rgba(0,0,0,.36);background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.edcare-lms-single-breadcrumb{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-2.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.tp-breadcrumb__bg.details3{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-3.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.footer-top-wrap{padding-bottom:80px;}.ed-default-footer.footer-section{background:#133432;background-color:#133432;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}@media (max-width: 767px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:40px;padding-bottom:40px;}}@media (min-width: 768px) and (max-width: 1023px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:70px;padding-bottom:70px;}}@media (min-width: 1024px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:100px;padding-bottom:100px;}}
+        .mt-cursor:before{background:#316ed1;}.scroll-to-top{background:#316ed1;color:#ffffff;}#preloader{background:#fff;background-color:#fff;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.page-header-content .rr_edcare_breadcrumb__title{color:#162726;}.edcare-breadcrumb-padding{background-image:url("{%static 'wp-content/themes/edcare/assets/img/bg-img/page-header-bg.png'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.blog-details-overlay::after{background-image:url("wp-content/themes/edcare/assets/img/blog/blog-stories/blog-stories-bg.png'%}");background-color:rgba(0,0,0,.36);background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.edcare-lms-single-breadcrumb{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-2.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.tp-breadcrumb__bg.details3{background-image:url("{%static 'wp-content/themes/edcare/assets/img/breadcrumb/breadcrumb-bg-3.jpg'%}");background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}.footer-top-wrap{padding-bottom:80px;}.ed-default-footer.footer-section{background:#133432;background-color:#133432;background-repeat:repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}@media (max-width: 767px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:40px;padding-bottom:40px;}}@media (min-width: 768px) and (max-width: 1023px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:70px;padding-bottom:70px;}}@media (min-width: 1024px){.edcare-breadcrumb-padding{padding-top:120px;padding-bottom:120px;}.edcare-blog-single-padding{padding-top:100px;padding-bottom:100px;}}
     </style>
     <style>.elementor-5546 .elementor-element.elementor-element-d73d22a{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--padding-top:30px;--padding-bottom:30px;--padding-left:30px;--padding-right:30px;}.elementor-5546 .elementor-element.elementor-element-e4021b0{--display:flex;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li:not(:last-of-type){margin-bottom:16px!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li:hover{transform:translateX(10px)!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-megamenu-home-title{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li a{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-megamenu-home-title a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-3ab1b22 .edcare-el-menu-list ul li a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-701121a{--display:flex;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li:not(:last-of-type){margin-bottom:16px!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li:hover{transform:translateX(10px)!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-megamenu-home-title{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li a{color:#162726!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-megamenu-home-title a:hover{color:#07A698!important;}.elementor-5546 .elementor-element.elementor-element-debb8ba .edcare-el-menu-list ul li a:hover{color:#07A698!important;}</style>
     <style id="etn-custom-css-inline-css" type="text/css">
@@ -190,7 +199,7 @@
             color: ;
         }
         .etn-event-tag-list a:hover{
-            border-color: ;
+            border-color: #316ed1;
         }
         .etn-btn:hover, .attr-btn-primary:hover,
         .etn-attendee-form .etn-btn:hover,
@@ -203,7 +212,7 @@
         .etn-single-speaker-item .etn-speaker-thumb .etn-speakers-social a:hover,
         .etn-recurring-event-wrapper #seeMore:hover, .etn-recurring-event-wrapper #seeMore:focus,
         .etn-settings-dashboard .button-primary:hover{
-            background-color: ;
+            background-color: #316ed1 ;
         }
         .events_calendar_list .calendar-event-details .event-calendar-action .etn-btn {
             max-width: 120px;
@@ -463,7 +472,7 @@
                             </li>
                         </ul>
                         <div class="hero-btn-wrap mb-0">
-                            <a href="#" class="edcare-el-button ed-primary-btn" style="background-color: white; color: #000000;">ابدأ</a>
+                            <a href="{%url 'register' %}" class="edcare-el-button ed-primary-btn" style="background-color: white; color: #000000;">ابدأ</a>
                             <a href="" class="edcare-el-button-two ed-primary-btn hero-btn-2" style="background-color: white; color: #000000;">دوراتنا</a>
                         </div>
                     </div>
@@ -541,58 +550,21 @@
 
             <div class="course-feature-carosuel swiper">
                 <div class="swiper-wrapper">
+                  {%for category in categories%}
                     <div class="swiper-slide">
                         <div class="course-feature-item">
                             <div class="course-feature-img">
-                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-1.png'%}" alt="صورة الفئة">
+                                <img decoding="async" src="{{category.cover.url}}" alt="صورة الفئة">
                             </div>
-                            <div class="content text-center">
+                            <div style=" background-color: rgba(255, 255, 255, 0.6); padding: 15px;border-radius: 10px;" class="content text-center">
                                 <h3 class="title">
-                                    <a href="#">تطوير الويب</a>
+                                    <a href="#">{{category.title}}</a>
                                 </h3>
                                 <span>189 دورة</span>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="course-feature-item">
-                            <div class="course-feature-img">
-                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-2.png'%}" alt="صورة الفئة">
-                            </div>
-                            <div class="content text-center">
-                                <h3 class="title">
-                                    <a href="#">نمو الأعمال</a>
-                                </h3>
-                                <span>122 دورة</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="course-feature-item">
-                            <div class="course-feature-img">
-                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-3.png'%}" alt="صورة الفئة">
-                            </div>
-                            <div class="content text-center">
-                                <h3 class="title">
-                                    <a href="#">تطوير الذات</a>
-                                </h3>
-                                <span>530 دورة</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="course-feature-item">
-                            <div class="course-feature-img">
-                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-feature-4.png'%}" alt="صورة الفئة">
-                            </div>
-                            <div class="content text-center">
-                                <h3 class="title">
-                                    <a href="#">رعاية الطفل الخاصة</a>
-                                </h3>
-                                <span>199 دورة</span>
-                            </div>
-                        </div>
-                    </div>
+                  {%endfor%}
                 </div>
             </div>
         </div>
@@ -835,7 +807,7 @@
  
     <section class="edcare-el-section cta-section pt-140 pb-140">
         <div class="cta-bg-img">
-            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/cta-bg-img.png'%}" alt="صورة CTA">
+            <img decoding="async" src="{%static 'wp-content\themes\edcare\assets\img\3 copy.jpg'%}" alt="صورة CTA">
         </div>
         <div class="shapes">
             <div class="shape shape-1">
@@ -848,7 +820,7 @@
         <div class="container">
             <div class="cta-content">
                 <h2 class="edcare-el-section-title title wow fade-in-bottom" data-wow-delay="200ms">
-                    خصم 25% لأول 50 طالبًا ومعلمًا
+               عروض خاصه لأوائل المشتركين
                 </h2>
                 <p class="edcare-el-section-description wow fade-in-bottom" data-wow-delay="400ms">
                     "القدرة على التعلم بالسرعة الخاصة بي كانت بمثابة تغيير جذري بالنسبة لي. سمح لي الجدول المرن بموازنة دراستي مع العمل والحياة الشخصية، مما جعل من الممكن إكمال الدورة دون الشعور بالإرهاق."
@@ -862,10 +834,10 @@
     </section>
     <div class="container">
         <div class="e-con-inner">
-            <div class="elementor-element">
-                <div class="elementor-widget-container">
+            <div class="elementor-element" style="text-align: center; margin-top: 15px;">
+                <div class="elementor-widget-container" style="text-align: center;">
                     <div class="edcare-el-section section-heading mb-40">
-                        <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
+                        <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom"   data-wow-delay="200ms">
                             <span class="heading-icon"><i aria-hidden="true" class="fas fa-bolt fa-solid"></i></span>
                             معلمونا
                         </h4>
@@ -879,16 +851,17 @@
     </div>
     <div class="container">
         <div class="row">
+            {%for expert in experts%}
             <div class="col-lg-4 col-md-6">
                 <div class="team-item-3 wow fade-in-bottom" data-wow-delay="200">
                     <div class="team-thumb-wrap">
                         <div class="team-thumb">
-                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.png'%}" alt="صورة المعلم">
+                            <img decoding="async" class="circle-image" src="{{expert.image.url}}" alt="صورة المعلم">
                         </div>
                     </div>
                     <div class="team-content">
-                        <h3 class="title"><a href="#">ماسون د. لوغان</a></h3>
-                        <span>مدرب تكنولوجيا المعلومات</span>
+                        <h3 class="title"><a href="#">{{expert.name}}</a></h3>
+                        <span>{{expert.job_title}}</span>
                         <ul class="social-list">
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -899,44 +872,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item-3 wow fade-in-bottom" data-wow-delay="400">
-                    <div class="team-thumb-wrap">
-                        <div class="team-thumb">
-                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-10.png'%}" alt="صورة المعلم">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title"><a href="#">إيزابيلا إ. أوليفيا</a></h3>
-                        <span>مدرب تكنولوجيا المعلومات</span>
-                        <ul class="social-list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item-3 wow fade-in-bottom" data-wow-delay="500">
-                    <div class="team-thumb-wrap">
-                        <div class="team-thumb">
-                            <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-11.png'%}" alt="صورة المعلم">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title"><a href="#">ديفيد ر. كونور</a></h3>
-                        <span>مدرب تكنولوجيا المعلومات</span>
-                        <ul class="social-list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        {%endfor%}
         </div>
     </div>
     <section class="edcare-el-section testimonial-section-2">
@@ -954,18 +890,21 @@
             </div>
             <div class="testi-carousel swiper">
                 <div class="swiper-wrapper">
+                    {%for review in reviews%}
                     <div class="swiper-slide">
                         <div class="testi-item-2">
                             <div class="testi-top-content">
                                 <div class="testi-thumb">
-                                    <img decoding="async" src="{%static 'wp-content/uploads/2024/12/testi-author-1.png'%}" alt="صورة المؤلف">
+                                    <img decoding="async" src="{{review.image.url}}" alt="صورة المؤلف">
                                 </div>
-                                <p>"الدورة تجاوزت توقعاتي من جميع النواحي. كانت المواد منظمة جيدًا وسهلة المتابعة، مما جعل حتى أكثر المفاهيم تعقيدًا قابلة للفهم."</p>
+                                <p>
+                                {{review.description}}
+                                </p>
                             </div>
                             <div class="testi-bottom">
                                 <div class="author-info">
-                                    <h4 class="name">إنديجو فيوليت</h4>
-                                    <span>مدير، Thump Coffee</span>
+                                    <h4 class="name">{{review.name}}</h4>
+                                    <span>{{review.job_title}}</span>
                                 </div>
                                 <ul class="testi-review" data-rate="5">
                                     <li class="star-container"><i class="fa-regular fa-star"></i></li>
@@ -978,30 +917,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="testi-item-2">
-                            <div class="testi-top-content">
-                                <div class="testi-thumb">
-                                    <img decoding="async" src="{%static 'wp-content/uploads/2024/12/testi-author-2.png'%}" alt="صورة المؤلف">
-                                </div>
-                                <p>"الدورة تجاوزت توقعاتي من جميع النواحي. كانت المواد منظمة جيدًا وسهلة المتابعة، مما جعل حتى أكثر المفاهيم تعقيدًا قابلة للفهم."</p>
-                            </div>
-                            <div class="testi-bottom">
-                                <div class="author-info">
-                                    <h4 class="name">مايكل توماس</h4>
-                                    <span>مدير، Plan4Demand</span>
-                                </div>
-                                <ul class="testi-review" data-rate="5">
-                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
-                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
-                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
-                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
-                                    <li class="star-container"><i class="fa-regular fa-star"></i></li>
-                                    <li class="point">(5)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    {%endfor%}
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

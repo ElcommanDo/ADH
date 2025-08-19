@@ -10,5 +10,6 @@ def home(request):
                       "courses": Course.objects.filter(is_active=True),
                       "categories": Category.objects.all(),
                       "experts": Expert.objects.all(),
+                      "reviews": StudnetsReview.objects.all()
                       
                   })

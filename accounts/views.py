@@ -63,7 +63,7 @@ def register_user(request):
                 address=address,
                 city=city
             )
-            return render(request, "register.html", {"success": "Account created successfully!"})
+            return render(request, "register.html", {"success": "تم تسجيل الحساب بنجاح وسيتم التواصل معك فى اقرب وقت"})
 
         # لو POST جاي JSON (من API أو Postman)
         try:
@@ -87,7 +87,7 @@ def register_user(request):
                 password=password,
                 first_name=first_name,
                 last_name=last_name,
-                role=role,
+                role='student',
                 parent_mobile=parent_mobile,
                 age=age,
                 address=address,
