@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y**^!+-&=373nq58y&9otc5tyhr&5^+!f%k1d2dfi)n---^&ph'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,6 +59,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+import socket
+
+hostname = socket.gethostname()
+LOCAL_HOSTNAMES = ["DESKTOP-2SE5D51"]  # <-- your real local machine name
+
+if hostname in LOCAL_HOSTNAMES:
+    DEBUG = True
+else:
+    DEBUG = False
+
 
 TEMPLATES = [
     {
@@ -76,6 +87,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -297,10 +309,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]   # optional, for extra static files
+STATIC_ROOT = BASE_DIR / "staticfiles"     # where collectstatic will put files
