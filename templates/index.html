@@ -68,6 +68,16 @@
     <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{%static 'css/brands.min.css'%}" type="text/css" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="{%static 'css/regular.min.css'%}" type="text/css" media="all">
     <style>
+
+.testi-top-content p {
+display: -webkit-box;
+-webkit-line-clamp: 3;   /* number of lines you want */
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+min-height: 4.5em;       /* keep fixed height for alignment */
+}
+
         .circle-image {
   width: 150px;        /* العرض */
   height: 150px;       /* الطول */
@@ -75,7 +85,74 @@
   object-fit: cover;   /* يظبط الصورة جوه الدائرة */
   border: 2px solid #ddd; /* اختياري: إطار حوالين الصورة */
 }
+.edcare-el-section-description {
+     text-align: justify; /* محاذاة منظمة */
+    line-height: 1.8;    /* مسافة بين السطور */
+}
 
+.edcare-el-section-description p {
+    margin: 0 0 10px;    /* مسافة بسيطة بين الفقرات */
+    unicode-bidi: plaintext; /* يظبط العربي والإنجليزي */
+}
+
+/* Initially hide the mobile menu */
+.mobile-side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Or left depending on your RTL setup, move it off-screen */
+    width: 280px; /* Adjust as needed */
+    height: 100%;
+    background-color: #fff;
+    z-index: 999;
+    transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+}
+
+/* Show the menu when the 'active' class is added by JavaScript */
+.mobile-side-menu.active {
+    right: 0;
+}
+.course-thumb {
+    width: 100% !important;
+    height: 220px !important;   /* fixed height for all images */
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.course-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;   /* crop to fill box */
+    display: block !important;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-xl-4,
+.col-lg-4,
+.col-md-6,
+.col-sm-12 {
+    display: flex;
+}
+
+.course-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Overlay for the background */
+.mobile-side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none; /* Initially hidden */
+}
     </style>
     <style id="tutor-frontend-inline-css" type="text/css">
         .edcare-el-button .ed-primary-btn a{
@@ -364,7 +441,7 @@
                                 <li class="menu-item"><a href="{%url 'home' %}" class="nav-links">الرئيسية</a></li>
                                 <li class="menu-item"><a href="#" class="nav-links">الصفحات</a></li>
                                 <li class="menu-item"><a href="#" class="nav-links">المتجر</a></li>
-                                <li class="menu-item"><a href="""" class="nav-links">الدورات</a></li>
+                                <li class="menu-item"><a href="#courses" class="nav-links">الدورات</a></li>
                                 <li class="menu-item"><a href="#" class="nav-links">المدونة</a></li>
                                 <li class="menu-item"><a href="#" class="nav-links">اتصل بنا</a></li>
                             </ul>
@@ -384,7 +461,7 @@
                                 </a>
                                 <span class="number" style="background-color: #316ed1;">0</span>
                             </div>
-                            <a href="#" class="ed-primary-btn header-btn edcare-el-btn" style="background-color: #316ed1;">ابدأ تجربتك المجانية</a>
+                            <a href="{%url 'register' %}" class="ed-primary-btn header-btn edcare-el-btn" style="background-color: #316ed1;">ابدأ تجربتك المجانية</a>
                             <div class="header-logo d-none d-lg-none">
                                 <a href="#">
                                     <img src="{%static 'img/1.jpg' %}" alt="">
@@ -401,24 +478,46 @@
             </div>
         </div>
     </header>
-    <div class="mobile-side-menu">
-        <div class="side-menu-content">
-            <div class="side-menu-head">
-                <a href="#">
-                    <img src="{%static 'img/1.jpg' %}" alt="شعار ADH">
-                </a>
-                <button class="mobile-side-menu-close">
-                    <i class="fa-regular fa-xmark"></i>
-                </button>
-            </div>
-            <div class="side-menu-wrap"></div>
-            <ul class="side-menu-list">
-                <li><i class="fa-light fa-location-dot"></i>العنوان: <span>أمستردام، 109-74</span></li>
-                <li><i class="fa-light fa-phone"></i>الهاتف: <a href="tel:+01569896654">+01 569 896 654</a></li>
-                <li><i class="fa-light fa-envelope"></i>البريد الإلكتروني: <a href="mailto:info@example.com">info@example.com</a></li>
+  <div class="mobile-side-menu" id="mobileMenu">
+    <div class="side-menu-content">
+        <div class="side-menu-head">
+            <a href="#">
+                <img src="{%static 'img/1.jpg' %}" alt="شعار ADH">
+            </a>
+            <button class="mobile-side-menu-close" id="mobileMenuClose">
+                <i class="fa-regular fa-xmark"></i>
+            </button>
+        </div>
+        <div class="side-menu-wrap">
+            <ul id="menu-1-c78ae76" class="edcare-nav-menu sub-menu" style="direction: rtl;">
+                <li class="menu-item"><a href="{%url 'home' %}" class="nav-links">الرئيسية</a></li>
+                <li class="menu-item"><a href="#" class="nav-links">الصفحات</a></li>
+                <li class="menu-item"><a href="#" class="nav-links">المتجر</a></li>
+                <li class="menu-item"><a href="#courses" class="nav-links">الدورات</a></li>
+                <li class="menu-item"><a href="#" class="nav-links">المدونة</a></li>
+                <li class="menu-item"><a href="#" class="nav-links">اتصل بنا</a></li>
+            </ul>
+        </div>
+        <ul class="side-menu-list">
+            <li><i class="fa-light fa-location-dot"></i>العنوان: <span>أمستردام، 109-74</span></li>
+            <li><i class="fa-light fa-phone"></i>الهاتف: <a href="tel:+01569896654">+01 569 896 654</a></li>
+            <li><i class="fa-light fa-envelope"></i>البريد الإلكتروني: <a href="mailto:info@example.com">info@example.com</a></li>
+        </ul>
+        <div class="side-menu-login">
+            <a href="{%url 'login' %}" class="ed-primary-btn">تسجيل الدخول</a>
+            <a href="{%url 'register' %}" class="ed-primary-btn">التسجيل</a>
+        </div>
+        <div class="side-menu-social">
+            <ul class="social-list">
+                <li><a href="https://www.facebook.com/ADH.Agency" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true" target="_blank"></i></a></li>
+                <li><a href="https://www.instagram.com/adhagency/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/@ADH.Agency" target="_blank"> <i class="fab fa-youtube" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
+</div>
     <div class="mobile-side-menu-overlay">
 
     </div>
@@ -473,7 +572,7 @@
                         </ul>
                         <div class="hero-btn-wrap mb-0">
                             <a href="{%url 'register' %}" class="edcare-el-button ed-primary-btn" style="background-color: white; color: #000000;">ابدأ</a>
-                            <a href="" class="edcare-el-button-two ed-primary-btn hero-btn-2" style="background-color: white; color: #000000;">دوراتنا</a>
+                            <a href="#courses" class="edcare-el-button-two ed-primary-btn hero-btn-2" style="background-color: white; color: #000000;">دوراتنا</a>
                         </div>
                     </div>
                 </div>
@@ -526,7 +625,7 @@
     <li><strong>المنح والتوظيف:</strong> ربط الشباب بفرص تعليمية ومهنية متميزة داخل وخارج الوطن.</li>
     <li><strong>البرامج القومية والتنموية:</strong> المساهمة في المبادرات والمشروعات الوطنية التي تخدم المجتمع.</li>
 </ul>
-                        <a href="""" class="edcare-el-button ed-primary-btn" style="background-color: #316ed1;">تصفح جميع الدورات<i class="fal fa-arrow-right"></i></a>
+                        <a href="#courses" class="edcare-el-button ed-primary-btn" style="background-color: #316ed1;">تصفح جميع الدورات<i class="fal fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -579,7 +678,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="section-heading text-center white-content">
+            <div id="courses" class="section-heading text-center white-content">
                 <h4 class="edcare-el-section-subheading sub-heading wow fade-in-bottom" data-wow-delay="200ms">
                     <span class="heading-icon">
                         <i aria-hidden="true" class="fas fa-bolt fa-solid"></i>
@@ -593,20 +692,21 @@
             <div class="course-tab-content tab-content">
                 <div class="tab-pane fade show active" id="home-1" role="tabpanel">
                     <div class="row gy-4 justify-content-center">
+                        {%for course in courses%}
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                             <div class="course-item dark-item">
                                 <div class="course-thumb-wrap">
                                     <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-05.jpg'%}" alt="صورة الدورة">
+                                        <img decoding="async"  src="{{course.cover.url}}" alt="صورة الدورة">
                                     </div>
                                 </div>
                                 <div class="course-content">
-                                    <span class="offer">تصميم UI/UX</span>
-                                    <h3 class="title"><a href="#">أساسيات تصميم UI UX الكاملة باستخدام Figma</a></h3>
+                                    <span class="offer" style="color: wheat;">{{course.category.title}}</span>
+                                    <h3 class="title"><a href="#">{{course.title}}</a></h3>
                                     <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
+                                        <li><i class="fa-light fa-file"></i>{{course.hours}}</li>
                                     </ul>
-                                    <div class="course-author-box">
+                                    <!-- <div class="course-author-box">
                                         <div class="course-author">
                                             <div class="author-img">
                                                 <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
@@ -619,186 +719,21 @@
                                         <ul class="course-review">
                                             <li class="point">(0)</li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
+                                    <span class="price"><span class="lms-free">
+                                    {%if course.is_free%}
+                                        مجاني
+                                    {%else%}
+                                    {{course.price}}
+                                    {%endif%}
+                                    </span></span>
                                     <a href="#" class="course-btn">عرض التفاصيل</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                            <div class="course-item dark-item">
-                                <div class="course-thumb-wrap">
-                                    <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-03.jpg'%}" alt="صورة الدورة">
-                                    </div>
-                                </div>
-                                <div class="course-content">
-                                    <span class="offer">تصميم ويب</span>
-                                    <h3 class="title"><a href="#">بناء مواقع ويب متجاوبة باستخدام HTML</a></h3>
-                                    <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
-                                        <li><i class="fa-light fa-user"></i>18 طالب</li>
-                                    </ul>
-                                    <div class="course-author-box">
-                                        <div class="course-author">
-                                            <div class="author-img">
-                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
-                                            </div>
-                                            <div class="author-info">
-                                                <h4 class="name">محيي الدين سومون</h4>
-                                                <span>مطور ووردبريس</span>
-                                            </div>
-                                        </div>
-                                        <ul class="course-review">
-                                            <li class="point">(0)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
-                                    <a href="#" class="course-btn">عرض التفاصيل</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                            <div class="course-item dark-item">
-                                <div class="course-thumb-wrap">
-                                    <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-04.jpg'%}" alt="صورة الدورة">
-                                    </div>
-                                </div>
-                                <div class="course-content">
-                                    <span class="offer">تصميم ويب</span>
-                                    <h3 class="title"><a href="#">دورة React للمبتدئين لبناء المهارات</a></h3>
-                                    <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>8 دروس</li>
-                                    </ul>
-                                    <div class="course-author-box">
-                                        <div class="course-author">
-                                            <div class="author-img">
-                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
-                                            </div>
-                                            <div class="author-info">
-                                                <h4 class="name">محيي الدين سومون</h4>
-                                                <span>مطور ووردبريس</span>
-                                            </div>
-                                        </div>
-                                        <ul class="course-review">
-                                            <li class="point">(0)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
-                                    <a href="#" class="course-btn">عرض التفاصيل</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                            <div class="course-item dark-item">
-                                <div class="course-thumb-wrap">
-                                    <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-09.jpg'%}" alt="صورة الدورة">
-                                    </div>
-                                </div>
-                                <div class="course-content">
-                                    <span class="offer">تصميم UI/UX</span>
-                                    <h3 class="title"><a href="#">إتقان Adobe Illustrator: المهارات الأساسية للتصميم الجرافيكي</a></h3>
-                                    <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>6 دروس</li>
-                                    </ul>
-                                    <div class="course-author-box">
-                                        <div class="course-author">
-                                            <div class="author-img">
-                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
-                                            </div>
-                                            <div class="author-info">
-                                                <h4 class="name">محيي الدين سومون</h4>
-                                                <span>مطور ووردبريس</span>
-                                            </div>
-                                        </div>
-                                        <ul class="course-review">
-                                            <li class="point">(0)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
-                                    <a href="#" class="course-btn">عرض التفاصيل</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                            <div class="course-item dark-item">
-                                <div class="course-thumb-wrap">
-                                    <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-10.jpg'%}" alt="صورة الدورة">
-                                    </div>
-                                </div>
-                                <div class="course-content">
-                                    <span class="offer">تحرير الفيديو</span>
-                                    <h3 class="title"><a href="#">دورة Adobe Premiere Pro Masterclass: تحرير الفيديو</a></h3>
-                                    <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>9 دروس</li>
-                                    </ul>
-                                    <div class="course-author-box">
-                                        <div class="course-author">
-                                            <div class="author-img">
-                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
-                                            </div>
-                                            <div class="author-info">
-                                                <h4 class="name">محيي الدين سومون</h4>
-                                                <span>مطور ووردبريس</span>
-                                            </div>
-                                        </div>
-                                        <ul class="course-review">
-                                            <li class="point">(0)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
-                                    <a href="#" class="course-btn">عرض التفاصيل</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                            <div class="course-item dark-item">
-                                <div class="course-thumb-wrap">
-                                    <div class="course-thumb">
-                                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/course-11.jpg'%}" alt="صورة الدورة">
-                                    </div>
-                                </div>
-                                <div class="course-content">
-                                    <span class="offer">تصميم ويب</span>
-                                    <h3 class="title"><a href="#">إتقان Webflow: بناء مواقع ويب مذهلة بدون كود</a></h3>
-                                    <ul class="course-list">
-                                        <li><i class="fa-light fa-file"></i>14 درس</li>
-                                        <li><i class="fa-light fa-user"></i>4 طلاب</li>
-                                    </ul>
-                                    <div class="course-author-box">
-                                        <div class="course-author">
-                                            <div class="author-img">
-                                                <img decoding="async" src="{%static 'wp-content/uploads/2024/12/team-9.jpg'%}" alt="صورة المؤلف">
-                                            </div>
-                                            <div class="author-info">
-                                                <h4 class="name">محيي الدين سومون</h4>
-                                                <span>مطور ووردبريس</span>
-                                            </div>
-                                        </div>
-                                        <ul class="course-review">
-                                            <li class="point">(0)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="bottom-content">
-                                    <span class="price"><span class="lms-free">مجاني</span></span>
-                                    <a href="#" class="course-btn">عرض التفاصيل</a>
-                                </div>
-                            </div>
-                        </div>
+                        {%endfor%}
                     </div>
                 </div>
             </div>
@@ -822,9 +757,18 @@
                 <h2 class="edcare-el-section-title title wow fade-in-bottom" data-wow-delay="200ms">
                عروض خاصه لأوائل المشتركين
                 </h2>
-                <p class="edcare-el-section-description wow fade-in-bottom" data-wow-delay="400ms">
-                    "القدرة على التعلم بالسرعة الخاصة بي كانت بمثابة تغيير جذري بالنسبة لي. سمح لي الجدول المرن بموازنة دراستي مع العمل والحياة الشخصية، مما جعل من الممكن إكمال الدورة دون الشعور بالإرهاق."
-                </p>
+<div class="edcare-el-section-description wow fade-in-bottom" data-wow-delay="400ms">
+  <p>استثمر في مستقبل أبنائك مع برامج iSchool لتعليم البرمجة وعلوم الحاسب!</p>
+  <p>يسرنا الإعلان عن شراكتنا مع شركة iSchool لتقديم دورات متكاملة في البرمجة وعلوم الحاسب في محافظتي أسيوط وسوهاج.</p>
+  
+  <p>في سوهاج: انضموا إلينا من خلال مدارس سيتي الخاصة.</p>
+  <p>في أسيوط: برامجنا متاحة من خلال مدرسة أحمد ضيف الله الدولية للذكاء الاصطناعي وتكنولوجيا المعلومات.</p>
+  
+  <p>امنحوا أبناءكم الفرصة لاكتساب المهارات الرقمية التي تؤهلهم لمستقبل واعد.</p>
+  
+  <p>للتسجيل والاستفسار، تواصلوا معنا الآن!</p>
+</div>
+
                 <div class="cta-btn-wrap wow fade-in-bottom" data-wow-delay="500ms">
                     <a href="#" class="edcare-el-button ed-primary-btn cta-btn">كن طالبًا<i class="fal fa-arrow-right"></i></a>
                     <a href="#" class="edcare-el-button-two ed-primary-btn cta-btn-2">كن معلمًا<i class="fal fa-arrow-right"></i></a>
@@ -939,51 +883,23 @@
                 </h2>
             </div>
             <div class="row gy-lg-0 gy-4 justify-content-center post-card-2-wrap">
+                {%for new in news%}
                 <div class="col-lg-4 col-md-6">
                     <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="300ms">
-                        <img fetchpriority="high" decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-11.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
+                        <img fetchpriority="high" decoding="async" width="100%" src="{{new.image.url}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
                         <div class="post-content-wrap">
                             <div class="post-content">
                                 <ul class="post-meta">
-                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
-                                    <li><i class="fa-sharp fa-regular fa-folder"></i>علوم</li>
+                                    <li><i class="fa-sharp fa-regular fa-clock"></i>{{new.created_at|date:"Y-m-d"}}</li>
+                                    <li><i class="fa-sharp fa-regular fa-folder"></i></li>
                                 </ul>
-                                <h3 class="title"><a href="#">أفضل الممارسات لتحقيق إنجازات الطلاب للمدارس والعائلات</a></h3>
+                                <h3 class="title"><a href="#">{{new.title}}</a></h3>
                                 <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="400ms">
-                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-07.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
-                        <div class="post-content-wrap">
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
-                                    <li><i class="fa-sharp fa-regular fa-folder"></i>فنون</li>
-                                </ul>
-                                <h3 class="title"><a href="#">أهمية دمج الفنون في العلوم والتكنولوجيا</a></h3>
-                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="post-card-2 post-card-3 wow fade-in-bottom" data-wow-delay="500ms">
-                        <img decoding="async" src="{%static 'wp-content/uploads/2024/12/ed-blog-06.jpg'%}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="صورة المدونة">
-                        <div class="post-content-wrap">
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                    <li><i class="fa-sharp fa-regular fa-clock"></i>12 ديسمبر 2024</li>
-                                    <li><i class="fa-sharp fa-regular fa-folder"></i>مدرسة</li>
-                                </ul>
-                                <h3 class="title"><a href="#">بناء المرونة والتعاطف في الفصل الدراسي</a></h3>
-                                <a href="#" class="read-more">اقرأ المزيد <i class="fa-regular fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {%endfor%}
             </div>
         </div>
     </section>

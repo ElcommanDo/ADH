@@ -4,13 +4,16 @@ from .models import Expert, New, StudnetsReview
 # Create your views here.
 
 def home(request):
-    
+    news = New.objects.all()
+    if len(news) >6:
+        news = list(news[0:6])
     return render(request, 'index.html',
                   {
                       "courses": Course.objects.filter(is_active=True),
                       "categories": Category.objects.all(),
                       "experts": Expert.objects.all(),
-                      "reviews": StudnetsReview.objects.all()
+                      "reviews": StudnetsReview.objects.all(),
+                      "news": news
                       
                   })
 
