@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الدورة</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* A simple CSS reset for consistency */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.6;
+            color: #4a5568;
+            direction: rtl;
+        }
+
+        /* Hero Section with Parallax Effect */
+        .hero-section {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Parallax image container */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%; /* Larger height for parallax movement */
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.1s ease-out;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Main content container */
+        .main-content-container {
+            max-width: 1200px;
+            margin: -80px auto 2rem; /* Pulls content up over the parallax section */
+            padding: 0 1rem;
+            position: relative;
+            z-index: 4;
+        }
+
+        .course-details-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-item .icon {
+            font-size: 2rem;
+            color: #316ed1;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .detail-item p {
+            color: #6b7280;
+        }
+        
+        .description-section {
+            line-height: 1.8;
+        }
+
+        .description-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .ed-primary-btn {
+            background-color: #316ed1;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        
+        /* The magnificent animation */
+        .ed-primary-btn:hover {
+            transform: translateY(-5px);
+            background-color: #2a58b2;
+            box-shadow: 0 10px 20px rgba(49, 110, 209, 0.25);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .course-details-card {
+                padding: 1.5rem;
+            }
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <!-- The parallax background image -->
+        <div id="hero-bg" class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="course-title">{{course.title}}</h1>
+            <p id="course-subtitle">{{course.category.title}}</p>
+        </div>
+    </div>
+
+    <div class="main-content-container">
+        <div class="course-details-card">
+            
+            <!-- Details Grid -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i class="fas fa-chalkboard-teacher icon"></i>
+                    <h3>المدرب</h3>
+                    <p id="instructor-name">...</p>
+                </div>
+                <div class="detail-item">
+                    <i class="far fa-clock icon"></i>
+                    <h3>ساعات الدورة</h3>
+                    <p><span id="course-hours">...</span> ساعة</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-tags icon"></i>
+                    <h3>التصنيف</h3>
+                    <p id="course-category">...</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-dollar-sign icon"></i>
+                    <h3>السعر</h3>
+                    <p id="course-price">...</p>
+                </div>
+            </div>
+
+            <!-- Description Section -->
+            <div class="description-section">
+                <h2>وصف الدورة</h2>
+                <div id="course-description">...</div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <a href="#" class="ed-primary-btn">اشترك الآن</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Placeholder data, this will be replaced by your Django view
+        const courseData = {
+            title: "{{course.title|safe}}",
+            subtitle: "{{course.category}}",
+            is_free: "{{course.is_free}}",
+            price: "{{course.price}}",
+            description: "{{course.description|escapejs }}",
+            category: "{{course.category}}",
+            cover_image_url: "{{course.cover.url}}",
+            hours: {{course.hours}},
+            instructor: " "
+        };
+        
+        // This is where you would place the Django-rendered data
+        // For example: const courseData = JSON.parse('{{ course_json | safe }}');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to populate the page with data
+            function populatePage(data) {
+                document.getElementById('course-title').textContent = data.title;
+                document.getElementById('course-subtitle').textContent = data.subtitle;
+                document.getElementById('instructor-name').textContent = data.instructor;
+                document.getElementById('course-hours').textContent = data.hours;
+                document.getElementById('course-category').textContent = data.category;
+                document.getElementById('course-price').textContent = data.is_free=="True" ? 'مجاني' : '$' + data.price;
+                document.getElementById('course-description').innerHTML = data.description;
+                document.getElementById('hero-bg').style.backgroundImage = `url('${data.cover_image_url}')`;
+            }
+
+            // Function for the parallax effect
+            function handleParallax() {
+                const heroBg = document.getElementById('hero-bg');
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.pageYOffset;
+                    heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+                });
+            }
+
+            // Call functions to populate and add animation
+            populatePage(courseData);
+            handleParallax();
+        });
+    </script>
+</body>
+</html>
