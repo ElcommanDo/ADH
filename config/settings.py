@@ -163,21 +163,21 @@ JAZZMIN_SETTINGS = {
     "site_brand": "ADH",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "\img\logo.jpg",
+    "site_logo": r"\img\logo.jpg",
     
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "\img\logo.jpg",
+    "login_logo": r"\img\logo.jpg",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": "\img\logo.jpg",
+    "login_logo_dark": r"\img\logo.jpg",
 
   
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "\img\logo.jpg",
+    "site_icon": r"\img\logo.jpg",
 
     # Welcome text on the login screen
     "welcome_sign": _("Welcome to ADH Agency"),
-    "custom_css": "\admin\css\custom.css",
+    "custom_css": r"\admin\css\custom.css",
     # Copyright on the footer
     "copyright": "Eng. Abdulrahman Mustafa",
 
