@@ -69,7 +69,6 @@ if hostname in LOCAL_HOSTNAMES:
 else:
     DEBUG = False
 
-DEBUG = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
