@@ -68,7 +68,89 @@
     <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{%static 'css/brands.min.css'%}" type="text/css" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-regular-css" href="{%static 'css/regular.min.css'%}" type="text/css" media="all">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!-- START: ADH Partners Slider Section (Updated) -->
+<style>
+/* Custom styles for the partners slider to avoid any conflicts */
+.adh-logo-slider-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
+.adh-logo-slider-title {
+    font-size: 2.25rem; /* Equivalent to text-3xl */
+    font-weight: 800; /* Equivalent to font-extrabold */
+    color: #1a202c; /* Equivalent to text-gray-900 */
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.adh-logo-slider-track-wrapper {
+    overflow: hidden; /* Hides logos as they slide out of view */
+    white-space: nowrap; /* Prevents logos from wrapping */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Define the continuous scrolling animation */
+@keyframes adh-scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.adh-logo-slider-track {
+    display: inline-flex;
+    animation: adh-scroll-logos 30s linear infinite;
+    animation-play-state: running;
+    will-change: transform;
+}
+
+/* Pause animation on hover for a better user experience */
+.adh-logo-slider-track-wrapper:hover .adh-logo-slider-track {
+    animation-play-state: paused;
+}
+
+.adh-logo-slider-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    flex-shrink: 0;
+    width: 120px;
+    text-align: center;
+}
+
+.adh-logo-slider-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.adh-logo-slider-img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* Fix for long titles to prevent overlap */
+.adh-logo-slider-card p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+</style>
     <style>
 
 .testi-top-content p {
@@ -633,6 +715,29 @@ min-height: 4.5em;       /* keep fixed height for alignment */
             </div>
         </div>
     </section>
+    
+<section class="adh-logo-slider-container">
+    <div class="container mx-auto">
+        <h2 class="adh-logo-slider-title">شركاؤنا الموثوقون</h2>
+        <div class="adh-logo-slider-track-wrapper">
+            <!-- This is the single track. The JavaScript will dynamically clone it. -->
+            <div id="adh-logo-slider-track" class="adh-logo-slider-track">
+                <!--
+                    Your partner logos will be placed here. You just need to add them once.
+                -->
+                    {%for partner in partners%}
+                <div class="adh-logo-slider-card">
+                    <div class="adh-logo-slider-circle bg-red-100">
+                        <img src="{{partner.logo.url}}" alt="Logo 1" class="adh-logo-slider-img">
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700">{{partner.title}}</p>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</section>
+
    <section  style="text-align: center;" class="edcare-el-section course-feature pt-120 pb-120">
         <div class="container" style="text-align: center;">
                   <div class="section-heading mb-0"  style="text-align: center; margin-bottom:10px;">
@@ -989,6 +1094,21 @@ min-height: 4.5em;       /* keep fixed height for alignment */
       All rights reserved.
     </p>
   </div>
+<!-- JavaScript to dynamically clone the logos for a seamless infinite loop -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoTrack = document.getElementById('adh-logo-slider-track');
+        // This loop clones the logos until the total track width is sufficient
+        // for a smooth, continuous loop. It's a key part of this solution.
+        while (logoTrack.offsetWidth < window.innerWidth * 2) {
+            const clones = logoTrack.cloneNode(true);
+            while (clones.firstChild) {
+                logoTrack.appendChild(clones.firstChild);
+            }
+        }
+    });
+</script>
+
 </footer>
 
 </body>

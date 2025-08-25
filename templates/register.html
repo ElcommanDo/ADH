@@ -116,6 +116,48 @@
     .alert {
       border-radius: 12px;
     }
+
+    /* New CSS for the improved radio button appearance */
+    .custom-radio-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 150px;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-align: center;
+        position: relative;
+    }
+
+    .custom-radio-card:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .custom-radio-card .check-icon {
+        color: var(--secondary-color);
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        font-size: 1.25rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    input[type="radio"]:checked + .custom-radio-card {
+        border-color: var(--secondary-color);
+        background-color: #EBF8FF; /* Light blue background for selected state */
+        box-shadow: 0 4px 10px rgba(90, 103, 216, 0.2);
+    }
+    
+    input[type="radio"]:checked + .custom-radio-card .check-icon {
+        opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -146,25 +188,42 @@
         </div>
 
         <div class="mt-3">
-          <input type="text" class="form-control" name="parent_mobile" placeholder="رقم هاتف ولي الأمر (اختياري)">
+          <input type="text" class="form-control" name="parent_mobile" required placeholder="رقم هاتف ولي الأمر ">
+        </div>
+
+  
+
+        <div class="mt-3">
+          <input type="number" class="form-control" name="age"  required placeholder="العمر ">
         </div>
 
         <div class="mt-3">
-          <input type="number" class="form-control" name="age" placeholder="العمر (اختياري)">
+          <input type="text" class="form-control" required name="city" placeholder="المدينة ">
         </div>
 
         <div class="mt-3">
-          <input type="text" class="form-control" name="city" placeholder="المدينة (اختياري)">
-        </div>
-
-        <div class="mt-3">
-          <textarea class="form-control" name="address" rows="2" placeholder="العنوان (اختياري)"></textarea>
+          <textarea class="form-control" required name="address" rows="2" placeholder="العنوان "></textarea>
         </div>
 
         <div class="mt-3">
           <input type="password" class="form-control" name="password" placeholder="كلمة المرور" required>
         </div>
+      <div class="mt-3">
+          <label class="form-label d-block mb-3 text-center">هل أنت طالب بمدرسة أحمد ضيف الله؟</label>
+          <div class="d-flex justify-content-center gap-3">
+            <input type="radio" id="is_school_yes" name="is_school_student" class="d-none" value="True" required>
+            <label for="is_school_yes" class="custom-radio-card">
+              نعم
+              <i class="fas fa-check-circle check-icon"></i>
+            </label>
 
+            <input type="radio" id="is_school_no" name="is_school_student" class="d-none" value="False" required>
+            <label for="is_school_no" class="custom-radio-card">
+              لا
+              <i class="fas fa-check-circle check-icon"></i>
+            </label>
+          </div>
+        </div>
         <div class="d-grid mt-4">
           <button type="submit" class="btn btn-custom">تسجيل</button>
         </div>

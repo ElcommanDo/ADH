@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
-
+from .models import CustomUser, Partner
+from django.utils.html import format_html
 
 class CustomUserAdmin(UserAdmin):
     # الحقول اللي هتظهر في جدول الـ admin list
-    list_display = ("student_mobile", "first_name", "last_name", "role", "is_active", "is_staff")
-    list_filter = ("role", "is_active", "is_staff", "is_superuser")
+    list_display = ("student_mobile", "first_name", "last_name", "role","is_school_student", "is_active", "is_staff")
+    list_filter = ("role", "is_active", "is_staff", "is_school_student")
 
     # الحقول اللي ممكن تعمل بحث بيها
     search_fields = ("student_mobile", "first_name", "last_name", "parent_mobile", "city")
@@ -31,6 +31,14 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-from django.contrib import admin
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ("cover_preview", "title")
+    search_fields = ("title",)
+    
+    def cover_preview(self, obj):
+        if obj.logo:
+            return format_html('<img src="{}" width="120" style="border-radius:8px;" />', obj.logo.url)
+        return "-"
+    cover_preview.short_description = "Cover Preview"
 
-# Register your models here.

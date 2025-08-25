@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from courses.models import Course, Category
 from .models import Expert, New, StudnetsReview
+from accounts.models import Partner
 # Create your views here.
 
 def home(request):
@@ -13,7 +14,8 @@ def home(request):
                       "categories": Category.objects.all(),
                       "experts": Expert.objects.all(),
                       "reviews": StudnetsReview.objects.all(),
-                      "news": news
+                      "news": news,
+                      "partners": Partner.objects.all()
                       
                   })
 

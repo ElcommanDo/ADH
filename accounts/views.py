@@ -37,8 +37,8 @@ CustomUser = get_user_model()
 @csrf_exempt
 def register_user(request):
     if request.method == "POST":
-        # لو الفورم جاي من الـ HTML
-        if request.content_type == "application/x-www-form-urlencoded" or request.content_type.startswith("multipart"):
+        try:
+
             student_mobile = request.POST.get("student_mobile")
             password = request.POST.get("password")
             first_name = request.POST.get("first_name", "")
@@ -46,6 +46,7 @@ def register_user(request):
             role = request.POST.get("role", "student")
             parent_mobile = request.POST.get("parent_mobile", "")
             age = request.POST.get("age")
+            is_school_student = request.POST.get("is_school_student")
             address = request.POST.get("address", "")
             city = request.POST.get("city", "")
 
@@ -61,42 +62,14 @@ def register_user(request):
                 parent_mobile=parent_mobile,
                 age=age,
                 address=address,
+                is_school_student = is_school_student,
                 city=city
             )
-            return render(request, "register.html", {"success": "تم تسجيل الحساب بنجاح وسيتم التواصل معك فى اقرب وقت"})
-
-        # لو POST جاي JSON (من API أو Postman)
-        try:
-            data = json.loads(request.body)
-
-            student_mobile = data.get("student_mobile")
-            password = data.get("password")
-            first_name = data.get("first_name", "")
-            last_name = data.get("last_name", "")
-            role = data.get("role", "student")
-            parent_mobile = data.get("parent_mobile", "")
-            age = data.get("age")
-            address = data.get("address", "")
-            city = data.get("city", "")
-
-            if CustomUser.objects.filter(student_mobile=student_mobile).exists():
-                return JsonResponse({"error": "Mobile already registered"}, status=400)
-
-            user = CustomUser.objects.create_user(
-                student_mobile=student_mobile,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                role='student',
-                parent_mobile=parent_mobile,
-                age=age,
-                address=address,
-                city=city
-            )
-            return JsonResponse({"message": "User registered successfully", "id": user.id})
-
         except Exception as e:
-            return JsonResponse({"error": str(e)}, status=400)
+            return render(request, "register.html", {"error": f"Error Exists! {e}"})
+    
+        return render(request, "register.html", {"success": "تم تسجيل الحساب بنجاح وسيتم التواصل معك فى اقرب وقت"})
+
 
     # GET Request → عرض صفحة التسجيل
     return render(request, "register.html")
